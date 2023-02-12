@@ -34,8 +34,9 @@ main {
         position: absolute;
         right: 40px;
     }
-    .card-container{
-        margin-top: 10rem !important;
+
+    .card-container {
+        margin-top: 20rem !important;
     }
 }
 
@@ -67,6 +68,18 @@ button {
     padding-top: 70px;
 }
 
+
+.card-image {
+    height: 50%;
+    background-image: url("../assets/1-slide.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/*img{
+    background-size: cover;
+    background-position: center;
+}*/
 /*.image-slide {
     height: 100%;
     width: 100%;
