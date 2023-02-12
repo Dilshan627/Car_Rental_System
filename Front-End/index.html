@@ -48,48 +48,72 @@
 </nav>
 
 
-<section class="container-fluid mt-4">
+<section class="container-fluid">
     <!--slider-->
     <div class="row justify-content-around" id="slider">
         <div class="col-md-7">
-            <div class="image-slide"></div>
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="assets/1-slide.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="assets/2-slide.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/3-slide.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
     </div>
 
     <!--    car card-->
-    <div class="row justify-content-around mt-5">
-        <div class="col-md-2 border border-3 border border-secondary mx-1 position-relative mt-3">
-            <h1>hello</h1>
-        </div>
-        <div class=" col-md-2 border border-3 border border-secondary mx-1 position-relative mt-3">
-            <h1>hello</h1>
+    <section class="card-container">
+        <div class="row justify-content-around mt-5">
+            <div class="col-md-2 border border-3 border border-secondary mx-1 position-relative mt-3">
+                <h1>hello</h1>
+            </div>
+            <div class="col-md-2 border border-3 border border-secondary mx-1 position-relative mt-3">
+                <h1>hello</h1>
+
+            </div>
+            <div class="col-md-2 border border-3 border border-secondary mx-1 position-relative mt-3">
+                <h1>hello</h1>
+
+            </div>
 
         </div>
-        <div class=" col-md-2 border border-3 border border-secondary mx-1 position-relative mt-3">
-            <h1>hello</h1>
+        <div class="row justify-content-around mt-3">
+            <div class="col-md-2 border border-3 border border-secondary mx-1 position-relative mt-3">
+                <h1>hello</h1>
+            </div>
+            <div class="col-md-2 border border-3 border border-secondary mx-1 position-relative mt-3">
+                <h1>hello</h1>
 
+            </div>
+            <div class="col-md-2 border border-3 border border-secondary mx-1 position-relative mt-3">
+                <h1>hello</h1>
+
+            </div>
         </div>
 
-    </div>
-    <div class="row justify-content-around mt-3">
-        <div class="col-md-2 border border-3 border border-secondary mx-1 position-relative mt-3">
-            <h1>hello</h1>
-        </div>
-        <div class=" col-md-2 border border-3 border border-secondary mx-1 position-relative mt-3">
-            <h1>hello</h1>
-
-        </div>
-        <div class=" col-md-2 border border-3 border border-secondary mx-1 position-relative mt-3">
-            <h1>hello</h1>
-
-        </div>
-    </div>
-
+    </section>
 
     <!--    contact-->
-    <div class="row justify-content-around mt-5" id="contact">
+    <!--  <div class="row justify-content-around mt-5" id="contact">
 
-    </div>
+      </div>-->
 
 </section>
 

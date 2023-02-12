@@ -5,7 +5,10 @@
 }
 
 .navbar {
+    width: 100%;
+    position: fixed;
     height: 42px;
+    z-index: 5;
 }
 
 .bg-dark {
@@ -31,7 +34,9 @@ main {
         position: absolute;
         right: 40px;
     }
-
+    .card-container{
+        margin-top: 10rem !important;
+    }
 }
 
 .navbar-toggler-icon {
@@ -50,26 +55,28 @@ main {
 }
 
 button {
-    background: darkgrey;
-    border-color: #F5F5F7;
+    background: rgb(55, 130, 228);
+    border-color: rgb(55, 130, 228);
     color: black;
     margin-left: 3px;
     border-radius: 5px;
 }
 
 #slider {
-    height: 35vh;
+    height: 50vh;
+    padding-top: 70px;
 }
 
-.image-slide {
+/*.image-slide {
     height: 100%;
     width: 100%;
     background-size: cover;
     background-position: center;
     background-image: url("../assets/1-slide.png");
-}
 
-#contact{
-    background-color: red;
-    height: 35vh;
-}
+}*/
+
+/*#contact{*/
+/*    background-color: red;*/
+/*    height: 35vh;*/
+/*}*/
