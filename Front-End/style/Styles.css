@@ -58,6 +58,18 @@ button {
 }
 
 #slider {
+    height: 35vh;
+}
+
+.image-slide {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../assets/1-slide.png");
+}
+
+#contact{
     background-color: red;
     height: 35vh;
 }
