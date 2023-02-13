@@ -35,9 +35,7 @@ main {
         right: 40px;
     }
 
-    .card-container {
-        margin-top: 20rem !important;
-    }
+
 }
 
 .navbar-toggler-icon {
@@ -63,33 +61,5 @@ button {
     border-radius: 5px;
 }
 
-#slider {
-    height: 50vh;
-    padding-top: 70px;
-}
 
 
-.card-image {
-    height: 50%;
-    background-image: url("../assets/1-slide.png");
-    background-size: cover;
-    background-position: center;
-}
-
-/*img{
-    background-size: cover;
-    background-position: center;
-}*/
-/*.image-slide {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-image: url("../assets/1-slide.png");
-
-}*/
-
-/*#contact{*/
-/*    background-color: red;*/
-/*    height: 35vh;*/
-/*}*/
