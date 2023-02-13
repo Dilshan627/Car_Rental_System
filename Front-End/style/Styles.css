@@ -34,8 +34,6 @@ main {
         position: absolute;
         right: 40px;
     }
-
-
 }
 
 .navbar-toggler-icon {
@@ -50,7 +48,6 @@ main {
 
 .nav-item5 {
     margin-top: 6px;
-
 }
 
 button {
@@ -60,6 +57,9 @@ button {
     margin-left: 3px;
     border-radius: 5px;
 }
-
+img{
+    background-size: cover;
+    background-position: center;
+}
 
 
