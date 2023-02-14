@@ -42,7 +42,7 @@
                     <a class="nav-link active" href="#Contact">Contact</a>
                 </li>
                 <li class="nav-item5">
-                    <button>Login</button>
+                    <button id="btn-login">Login</button>
                 </li>
                 <li class="nav-item5">
                     <button>Sign Up</button>
@@ -53,7 +53,7 @@
 </nav>
 
 
-<section class="container-fluid">
+<section class="container-fluid" id="login_page_container">
 
     <div class="d-flex flex-row" id="Home">
         <!--        form-->
@@ -260,6 +260,26 @@
             <h6>©2023 Damitha Dilshan, All Rights Reserved</h6>
         </div>
     </div>
+</section>
+
+
+<!--login screen-->
+<section class="container-fluid " id="login_screen" style="height: 80vh;align-items: center">
+
+    <div class="col-md-3 position-absolute top-50 start-50 translate-middle" style="height: 50vh;">
+        <h1 style="justify-content: center;align-items: center;display: flex;">Login</h1>
+        <input class="mt-3" id="userName" placeholder="User Name" style="font-size: 20px;width: 95%" type="text">
+
+        <input class="mt-3" id="userAddress" placeholder="Password" style="font-size: 20px;width: 95%" type="password">
+
+        <button class="mt-3" id="back-dash-board">back</button>
+        <button class="mt-3" id="log-dash-board-admin">log admin</button>
+        <button class="mt-3" id="log-dash-board-driver">log driver</button>
+        <button class="mt-3" id="log-dash-board">log customer</button>
+
+
+    </div>
+
 </section>
 
 
