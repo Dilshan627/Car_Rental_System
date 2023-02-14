@@ -16,7 +16,6 @@ $("#btn-login").click(function () {
     $("#login_screen").css('display', 'block');
 
     $('#loading_page').css('display', 'none');
-
 });
 
 

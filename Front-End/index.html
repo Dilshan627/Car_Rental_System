@@ -253,7 +253,7 @@
                 <button class="mt-2" style="height: 40px">ADMIN</button>
             </div>
             <div>
-                <button id="admin_logout" class="mt-2" style="height: 40px">logout</button>
+                <button class="mt-2" id="admin_logout" style="height: 40px">logout</button>
             </div>
 
         </div>
@@ -268,18 +268,51 @@
 
 <!--driver dashboard-->
 <section class="container-fluid" id="driver_screen" style="height: 99vh;">
-    <div class="d-flex" style="height: 100%; width: 100%; background-color: red">
+    <div class="d-flex flex-column" style="height: 100%; width: 100%;">
+
+        <div style="height: 20%">
+            <h1 class="d-flex justify-content-center mt-5" style="align-items: center;">Schedule</h1>
+        </div>
+        <div style="height: 78%">
+            <div class="col1" style="height:80%; overflow-x: scroll">
+                <table class="table table-hover">
+                    <thead class="bg-secondary">
+                    <tr>
+                        <th>Schedule Id</th>
+                        <th>Reserve Id</th>
+                        <th>Car Id</th>
+                        <th>Driver Id</th>
+                        <th>Pickup Date</th>
+                        <th>Pickup Time</th>
+                        <th>Return Date</th>
+                        <th>Return Time</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody id="driverScheduleTable"></tbody>
+
+
+                </table>
+            </div>
+
+        </div>
 
 
     </div>
-
 </section>
 
 
 <!--customer dashboard-->
 <section class="container-fluid" id="customer_screen" style="height: 99vh;">
-    <div class="d-flex" style="height: 100%; width: 100%; background-color: red">
+    <div class="d-flex flex-column" style="height: 100%; width: 100%;">
+        <div style="height: 20%">
+            <h1 class="d-flex justify-content-center mt-5" style="align-items: center;">BOOKING</h1>
+        </div>
+        <div>
 
+
+            
+        </div>
 
     </div>
 
