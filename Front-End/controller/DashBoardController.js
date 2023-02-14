@@ -15,7 +15,7 @@ $("#back-dash-board").click(function () {
 
 
 $("#log-dash-board-admin").click(function () {
+    $('#login_page_container').css('display','none');
 
-
-
+    $("#login_screen").css('display','none');
 });
