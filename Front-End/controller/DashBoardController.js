@@ -12,3 +12,10 @@ $("#back-dash-board").click(function () {
 
     $("#login_screen").css('display','none');
 });
+
+
+$("#log-dash-board-admin").click(function () {
+
+
+
+});
