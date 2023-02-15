@@ -88,3 +88,7 @@ $("#btn_income").click(function () {
     $("#reservation_dashboard").css('display', 'none');
     $("#payment_dashboard").css('display', 'none');
 });
+
+
+
+
