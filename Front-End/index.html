@@ -479,13 +479,16 @@
         <div class="col-md-8 d-flex flex-column" style="height: 100%;">
 
             <div class="mt-5" style="height: 10%;">
-                <button class="mx-3" style="width: 48%; font-size: 2rem">Customer Register</button>
-                <button style="width: 48%; font-size: 2rem">Driver Register</button>
+                <button class="mx-3" id="btn_customer_register" style="width: 48%; font-size: 2rem">Customer Register
+                </button>
+                <button id="btn_driver_register" style="width: 48%; font-size: 2rem">Driver Register</button>
             </div>
 
-            <div  style="height: 80%; background-color: #1c1212">
+            <div style="height: 80%; background-color: #1c1212">
 
-                
+                <div id="customer_register_screen" style="height: 100%; background-color: #b91111"></div>
+                <div id="driver_register_screen" style="height: 100%; background-color: #3838ef"></div>
+
             </div>
 
 
@@ -503,6 +506,7 @@
 <script src="controller/loginController.js"></script>
 <script src="controller/AdminController.js"></script>
 <script src="controller/NavigationController.js"></script>
+<script src="controller/SignUpController.js"></script>
 
 </body>
 </html>
