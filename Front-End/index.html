@@ -352,7 +352,7 @@
                 <table class="table table-hover">
                     <thead class="bg-secondary">
                     <tr>
-<!--                        <th>Schedule Id</th>-->
+                        <!--                        <th>Schedule Id</th>-->
                         <th>Reserve Id</th>
                         <th>Car Id</th>
                         <th>Driver Id</th>
@@ -462,7 +462,6 @@
                         <button class="mt-5 col-md-1 ">CONTINUE CAR Booking</button>
                     </div>
 
-
                 </div>
             </div>
         </div>
@@ -478,33 +477,34 @@
     <div class="d-flex justify-content-center" style="align-items: center; height: 100%">
         <div class="col-md-8 d-flex flex-column" style="height: 100%;">
 
-            <div class="mt-5" style="height: 10%;">
-                <button class="mx-3" id="btn_customer_register" style="width: 48%; font-size: 2rem">Customer Register
+            <div class="mt-5 d-flex justify-content-center" style="height: 10%; background-color: rgb(237, 237, 237);">
+                <button class="col-md-5" id="btn_customer_register" style="font-size: 2rem">Customer Register
                 </button>
-                <button id="btn_driver_register" style="width: 48%; font-size: 2rem">Driver Register</button>
+                <button class="col-md-5" id="btn_driver_register" style="font-size: 2rem">Driver Register</button>
             </div>
 
             <div style="height: 80%;">
-
-                <div id="customer_register_screen" style="height: 100%; background-color: #8d7373">
+<!--                Customer Register-->
+                <div id="customer_register_screen" style="height: 100%; background-color: rgb(237, 237, 237);">
 
                     <div class="d-flex justify-content-around">
-                        <div>  <label class="form-label" for="Ptime">User Name:</label>
+                        <div class="mt-5">
+                            <label class="form-label" for="Ptime">User Name:</label>
                             <input class="form-control" id="Ptime" type="text">
                         </div>
-                        <div>
+                        <div class="mt-5">
                             <label class="form-label" for="Ptime">Full Name:</label>
                             <input class="form-control" id="Ptime" type="text">
                         </div>
-                        <div>
+                        <div class="mt-5">
                             <label class="form-label" for="Ptime">Contact Number:</label>
                             <input class="form-control" id="Ptime" type="text">
                         </div>
                     </div>
 
 
-                    <div class="d-flex justify-content-around">
-                        <div>  <label class="form-label" for="Ptime">Address:</label>
+                    <div class="mt-5 d-flex justify-content-around">
+                        <div><label class="form-label" for="Ptime">Address:</label>
                             <input class="form-control" id="Ptime" type="text">
                         </div>
                         <div>
@@ -517,30 +517,56 @@
                         </div>
                     </div>
 
-                    <div class="mx-3 d-flex">
-                        <div class="mx-5">
-                            <label class="mx-5 form-label" for="Ptime">Upload Your Image:</label>
-                            <input class="mx-5 form-control" id="Ptime" type="file">
+
+                    <div class="mt-5 d-flex justify-content-around" style="width: 67%">
+                        <div>
+                            <label class="form-label" for="Ptime">NIC Number:</label>
+                            <input class="form-control" id="Ptime" type="text">
+                        </div>
+                        <div>
+                            <label class="form-label" for="Ptime">License Number:</label>
+                            <input class="form-control" id="Ptime" type="text">
+                        </div>
+
+                    </div>
+
+                    <div class="mt-5 d-flex justify-content-around">
+                        <div>
+                            <label class="form-label" for="Ptime">Upload Your Image:</label>
+                            <input class="form-control" id="Ptime" type="file">
+                        </div>
+                        <div>
+                            <label class="form-label" for="Ptime">Add National identity Image:</label>
+                            <input class="form-control" id="Ptime" type="file">
+                        </div>
+                        <div>
+                            <label class="form-label" for="Ptime">Add License Your Image:</label>
+                            <input class="form-control" id="Ptime" type="file">
                         </div>
                     </div>
 
-                    <div class="mx-3 d-flex  justify-content-around">
-                        <div class="mx-5">
-                            <label class="mx-5 form-label" for="Ptime">Upload Your Image:</label>
-                            <input class="mx-5 form-control" id="Ptime" type="file">
-                        </div>
-                        <div class="mx-5">
-                            <label class="mx-5 form-label" for="Ptime">Upload Your Image:</label>
-                            <input class="mx-5 form-control" id="Ptime" type="file">
-                        </div>
-                    </div>
 
+                    <div class="mt-5 d-flex justify-content-center">
+                        <button style=" font-size: 2rem">submit</button>
+                    </div>
 
                 </div>
 
+<!--                Driver Register-->
+                <div id="driver_register_screen" style="height: 100%; background-color: rgb(237, 237, 237);">
 
-                <div id="driver_register_screen" style="height: 100%; background-color: #3838ef">
+                    <div class="d-flex justify-content-around">
 
+                        <div class="mt-5">
+                            <label class="form-label" for="Ptime">Full Name:</label>
+                            <input class="form-control" id="Ptime" type="text">
+                        </div>
+                        <div class="mt-5">
+                            <label class="form-label" for="Ptime">Contact Number:</label>
+                            <input class="form-control" id="Ptime" type="text">
+                        </div>
+
+                    </div>
 
 
                 </div>
