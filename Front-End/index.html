@@ -70,6 +70,7 @@
                 <img class="mt-5" src="assets/car_rental_logo.gif" style="width: 50%;">
 
                 <button class="mt-5" id="btn-login" style="width: 50%;height: 10%">Login</button>
+
                 <button class="mt-2" id="btn-signUp" style="width: 50%;height: 10%">Sign Up</button>
 
             </div>
@@ -284,16 +285,72 @@
 <section class="container-fluid" id="login_screen" style="height: 80vh;align-items: center">
 
     <div class="col-md-3 position-absolute top-50 start-50 translate-middle" style="height: 50vh;">
-        <h1 style="justify-content: center;align-items: center;display: flex;">Login</h1>
-        <input class="mt-3" id="userName" placeholder="User Name" style="font-size: 20px;width: 95%" type="text">
 
-        <input class="mt-3" id="userAddress" placeholder="Password" style="font-size: 20px;width: 95%" type="password">
+        <!--        <h1 style="justify-content: center;align-items: center;display: flex;">Login</h1>-->
+        <!--        <input class="mt-3" id="userName" placeholder="User Name" style="font-size: 20px;width: 95%" type="text">-->
+        <!--        <input class="mt-3" id="userAddress" placeholder="Password" style="font-size: 20px;width: 95%" type="password">-->
+        <!--        <button class="mt-3" id="back-dash-board">back</button>-->
+        <!--        <button class="mt-3" id="log-dash-board-admin">log admin</button>-->
+        <!--        <button class="mt-3" id="log-dash-board-driver">log driver</button>-->
+        <!--        <button class="mt-3" id="log-dash-board-customer">log customer</button>-->
 
-        <button class="mt-3" id="back-dash-board">back</button>
-        <button class="mt-3" id="log-dash-board-admin">log admin</button>
-        <button class="mt-3" id="log-dash-board-driver">log driver</button>
-        <button class="mt-3" id="log-dash-board-customer">log customer</button>
+        <form>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <input class="form-control" id="userName" type="email"/>
+                <label class="form-label" for="userName">user name</label>
+            </div>
 
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <input class="form-control" id="password" type="password"/>
+                <label class="form-label" for="password">Password</label>
+            </div>
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                    <!-- Checkbox -->
+                    <div class="form-check">
+                        <input checked class="form-check-input" id="form2Example34" type="checkbox" value=""/>
+                        <label class="form-check-label" for="form2Example34"> Remember me </label>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <!-- Simple link -->
+                    <a href="#!">Forgot password?</a>
+                </div>
+            </div>
+
+            <!-- Submit button -->
+            <button class="btn btn-primary btn-block mb-4" id="log-dash-board-customer" type="submit">customer login
+            </button>
+            <button class="btn btn-primary btn-block mb-4" id="log-dash-board-driver" type="submit">driver login
+            </button>
+            <button class="btn btn-primary btn-block mb-4" id="log-dash-board-admin" type="submit">admin login</button>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+                <p>Not a member? <a href="#!">Register</a></p>
+                <p>or sign up with:</p>
+                <button class="btn btn-secondary btn-floating mx-1" type="button">
+                    <i class="fab fa-facebook-f"></i>
+                </button>
+
+                <button class="btn btn-secondary btn-floating mx-1" type="button">
+                    <i class="fab fa-google"></i>
+                </button>
+
+                <button class="btn btn-secondary btn-floating mx-1" type="button">
+                    <i class="fab fa-twitter"></i>
+                </button>
+
+                <button class="btn btn-secondary btn-floating mx-1" type="button">
+                    <i class="fab fa-github"></i>
+                </button>
+            </div>
+        </form>
 
     </div>
 
