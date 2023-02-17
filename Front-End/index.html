@@ -13,6 +13,13 @@
 
     <link href="style/Styles.css" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet"/>
+
 
 </head>
 <body>
@@ -466,7 +473,7 @@
 
 
 <!--driver dashboard-->
-<section class="container-fluid" id="driver_screen" style="height: 99vh;">
+<section class="container-fluid" id="driver_screen" style="height: 90vh;">
     <div class="d-flex flex-column" style="height: 100%; width: 100%;">
 
         <div style="height: 20%">
@@ -502,7 +509,7 @@
 
 
 <!--customer dashboard-->
-<section class="container-fluid" id="customer_screen" style="height: 99vh;">
+<section class="container-fluid" id="customer_screen" style="height: 90vh;">
     <div class="d-flex flex-column" style="height: 100%; width: 100%;">
         <div style="height: 20%">
             <h1 class="d-flex justify-content-center mt-5" style="align-items: center;">BOOKING</h1>
@@ -597,15 +604,14 @@
 
 
 <!--signUp screen-->
-<section class="container-fluid " id="signUp_screen" style="height: 99vh;">
+<section class="container-fluid " id="signUp_screen" style="height: 90vh;">
 
     <div class="d-flex justify-content-center" style="align-items: center; height: 100%">
         <div class="col-md-8 d-flex flex-column" style="height: 100%;">
 
             <div class="mt-5 d-flex justify-content-center" style="height: 10%; background-color: rgb(237, 237, 237);">
-                <button class="col-md-5" id="btn_customer_register" style="font-size: 2rem">Customer Register
+                <button class="col-md-5" style="font-size: 2rem">Customer Register
                 </button>
-                <button class="col-md-5" id="btn_driver_register" style="font-size: 2rem">Driver Register</button>
             </div>
 
             <div style="height: 80%;">
@@ -673,46 +679,6 @@
 
                 </div>
 
-                <!--                Driver Register-->
-                <div id="driver_register_screen" style="height: 100%; background-color: rgb(237, 237, 237);">
-
-                    <div class="d-flex justify-content-around">
-                        <div class="mt-5 col-md-5">
-                            <label class="form-label" for="Ptime">Driver Name:</label>
-                            <input class="form-control" id="Ptime" type="text">
-                        </div>
-                        <div class="mt-5 col-md-5">
-                            <label class="form-label" for="Ptime">Driver Address:</label>
-                            <input class="form-control" id="Ptime" type="text">
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-around">
-                        <div class="mt-5 col-md-5">
-                            <label class="form-label" for="Ptime">Age:</label>
-                            <input class="form-control" id="Ptime" type="text">
-                        </div>
-                        <div class="mt-5 col-md-5">
-                            <label class="form-label" for="Ptime">Contact Number:</label>
-                            <input class="form-control" id="Ptime" type="text">
-                        </div>
-                    </div>
-
-                    <!--  <div class="d-flex justify-content-around">
-                          <div class="mt-5 col-md-5">
-                              <label class="form-label" for="Ptime">Full Name:</label>
-                              <input class="form-control" id="Ptime" type="text">
-                          </div>
-
-                      </div>-->
-
-
-                    <div class="mt-5 d-flex justify-content-center">
-                        <button style=" font-size: 2rem">submit</button>
-                    </div>
-
-
-                </div>
 
             </div>
         </div>
@@ -720,6 +686,51 @@
 
 </section>
 
+
+<!--                Driver Register
+<div id="driver_register_screen" style="height: 100%; background-color: rgb(237, 237, 237);">
+
+    <div class="d-flex justify-content-around">
+        <div class="mt-5 col-md-5">
+            <label class="form-label" for="Ptime">Driver Name:</label>
+            <input class="form-control" id="Ptime" type="text">
+        </div>
+        <div class="mt-5 col-md-5">
+            <label class="form-label" for="Ptime">Driver Address:</label>
+            <input class="form-control" id="Ptime" type="text">
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-around">
+        <div class="mt-5 col-md-5">
+            <label class="form-label" for="Ptime">Age:</label>
+            <input class="form-control" id="Ptime" type="text">
+        </div>
+        <div class="mt-5 col-md-5">
+            <label class="form-label" for="Ptime">Contact Number:</label>
+            <input class="form-control" id="Ptime" type="text">
+        </div>
+    </div>
+
+    &lt;!&ndash;  <div class="d-flex justify-content-around">
+          <div class="mt-5 col-md-5">
+              <label class="form-label" for="Ptime">Full Name:</label>
+              <input class="form-control" id="Ptime" type="text">
+          </div>
+
+      </div>&ndash;&gt;
+
+
+    <div class="mt-5 d-flex justify-content-center">
+        <button style=" font-size: 2rem">submit</button>
+    </div>
+
+
+</div>-->
+
+
+<!-- MDB -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js" type="text/javascript"></script>
 
 <script crossorigin="anonymous"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
