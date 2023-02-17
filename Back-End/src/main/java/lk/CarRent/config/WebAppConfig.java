@@ -32,5 +32,4 @@ public class WebAppConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/uploads/**").addResourceLocations("/uploads/");
     }
 
-
 }

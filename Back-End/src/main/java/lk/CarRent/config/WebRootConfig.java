@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Import;
 @Import({JPAConfig.class})
 @ComponentScan(basePackageClasses = {AdminServiceImpl.class})
 public class WebRootConfig {
-
     @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();

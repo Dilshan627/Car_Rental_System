@@ -5,9 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("admin")
+@RequestMapping("customer")
 @CrossOrigin
-public class AdminController {
-
-
+public class CustomerController {
 }
