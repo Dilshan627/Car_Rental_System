@@ -1,7 +1,7 @@
 package lk.CarRent.config;
 
 import lk.CarRent.advisor.AppWideExceptionHandler;
-import lk.CarRent.controller.AdminController;
+import lk.CarRent.controller.CustomerController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackageClasses = {AdminController.class, AppWideExceptionHandler.class})
+@ComponentScan(basePackageClasses = {CustomerController.class, AppWideExceptionHandler.class})
 public class WebAppConfig implements WebMvcConfigurer {
 
     /*

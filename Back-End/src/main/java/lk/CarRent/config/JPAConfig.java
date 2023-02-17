@@ -1,6 +1,6 @@
 package lk.CarRent.config;
 
-import lk.CarRent.repo.AdminRepo;
+import lk.CarRent.repo.CustomerRepo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -18,15 +18,16 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackageClasses = {AdminRepo.class})
+@EnableJpaRepositories(basePackageClasses = {CustomerRepo.class})
 public class JPAConfig {
+
     public JPAConfig(){
     }
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter jpa){
         LocalContainerEntityManagerFactoryBean bean = new LocalContainerEntityManagerFactoryBean();
-        bean.setPackagesToScan(new String[]{"lk.ijse.spring.entity"});
+        bean.setPackagesToScan(new String[]{"lk.CarRent.entity"});
         bean.setDataSource(ds);
         bean.setJpaVendorAdapter(jpa);
         return bean;
@@ -56,4 +57,5 @@ public class JPAConfig {
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
         return new JpaTransactionManager(emf);
     }
+
 }
