@@ -116,6 +116,18 @@ $("#btn-signUp").click(function () {
     $("#signUp_screen").css('display', 'block');
 
     $('#loading_page').css('display', 'none');
+
+    $('#rCustomerName').val("");
+    $('#rCustomerFName').val("");
+    $('#rCustomerNumber').val("");
+    $('#rCustomerAddress').val("");
+    $('#rCustomerEmail').val("");
+    $('#rCustomerPassword').val("");
+    $('#rCustomerNic').val("");
+    $('#rCustomerLicenseNumber').val("");
+    $('#rCustomerNicImage').val("");
+    $('#rCustomerLicenseImage').val("");
+
 });
 
 $("#back-dash-board").click(function () {

@@ -618,64 +618,70 @@
                 <!--                Customer Register-->
                 <div id="customer_register_screen" style="height: 100%; background-color: rgb(237, 237, 237);">
 
-                    <div class="d-flex justify-content-around">
-                        <div class="mt-5">
-                            <label class="form-label" for="rCustomerName">User Name:</label>
-                            <input class="form-control" id="rCustomerName" type="text">
-                            <span></span>
+                    <form id="customerRegisterForm">
+                        <div class="d-flex justify-content-around">
+                            <div class="mt-5">
+                                <label class="form-label" for="rCustomerName">User Name:</label>
+                                <input class="form-control" id="rCustomerName" name="customerUserName" type="text">
+                                <span></span>
+                            </div>
+                            <div class="mt-5">
+                                <label class="form-label" for="rCustomerFName">Full Name:</label>
+                                <input class="form-control" id="rCustomerFName" name="customerFullName" type="text">
+                            </div>
+                            <div class="mt-5">
+                                <label class="form-label" for="rCustomerNumber">Contact Number:</label>
+                                <input class="form-control" id="rCustomerNumber" name="customerContact" type="text">
+                            </div>
                         </div>
-                        <div class="mt-5">
-                            <label class="form-label" for="rCustomerFName">Full Name:</label>
-                            <input class="form-control" id="rCustomerFName" type="text">
+
+                        <div class="mt-5 d-flex justify-content-around">
+                            <div><label class="form-label" for="rCustomerAddress">Address:</label>
+                                <input class="form-control" id="rCustomerAddress" name="customerAddress" type="text">
+                            </div>
+                            <div>
+                                <label class="form-label" for="rCustomerEmail">Email Address:</label>
+                                <input class="form-control" id="rCustomerEmail" name="customerEmail" type="text">
+                            </div>
+                            <div>
+                                <label class="form-label" for="rCustomerPassword">Password:</label>
+                                <input class="form-control" id="rCustomerPassword" name="customerPassword"
+                                       type="password">
+                            </div>
                         </div>
-                        <div class="mt-5">
-                            <label class="form-label" for="rCustomerNumber">Contact Number:</label>
-                            <input class="form-control" id="rCustomerNumber" type="text">
-                        </div>
-                    </div>
+
+                        <div class="mt-5 d-flex justify-content-around" style="width: 67%">
+                            <div>
+                                <label class="form-label" for="rCustomerNic">NIC Number:</label>
+                                <input class="form-control" id="rCustomerNic" name="customerNicNo" type="text">
+                            </div>
+                            <div>
+                                <label class="form-label" for="rCustomerLicenseNumber">License Number:</label>
+                                <input class="form-control" id="rCustomerLicenseNumber" name="customerDrivingLicenseNo"
+                                       type="text">
+                            </div>
 
 
-                    <div class="mt-5 d-flex justify-content-around">
-                        <div><label class="form-label" for="rCustomerAddress">Address:</label>
-                            <input class="form-control" id="rCustomerAddress" type="text">
                         </div>
-                        <div>
-                            <label class="form-label" for="rCustomerEmail">Email Address:</label>
-                            <input class="form-control" id="rCustomerEmail" type="text">
-                        </div>
-                        <div>
-                            <label class="form-label" for="rCustomerPassword">Password:</label>
-                            <input class="form-control" id="rCustomerPassword" type="password">
-                        </div>
-                    </div>
 
 
-                    <div class="mt-5 d-flex justify-content-around" style="width: 67%">
-                        <div>
-                            <label class="form-label" for="rCustomerNic">NIC Number:</label>
-                            <input class="form-control" id="rCustomerNic" type="text">
-                        </div>
-                        <div>
-                            <label class="form-label" for="rCustomerLicenseNumber">License Number:</label>
-                            <input class="form-control" id="rCustomerLicenseNumber" type="text">
-                        </div>
-                    </div>
+                        <div class="mt-5 d-flex justify-content-around">
 
-                    <div class="mt-5 d-flex justify-content-around">
+                            <div>
+                                <label class="form-label" for="rCustomerNicImage">Add National identity Image:</label>
+                                <input class="form-control" id="rCustomerNicImage" name="NICImage" type="file">
+                            </div>
+                            <div>
+                                <label class="form-label" for="rCustomerLicenseImage">Add License Your Image:</label>
+                                <input class="form-control" id="rCustomerLicenseImage" name="DrivingLicenseImage"
+                                       type="file">
+                            </div>
 
-                        <div>
-                            <label class="form-label" for="Ptime">Add National identity Image:</label>
-                            <input class="form-control" id="Ptime" type="file">
                         </div>
-                        <div>
-                            <label class="form-label" for="Ptime">Add License Your Image:</label>
-                            <input class="form-control" id="Ptime" type="file">
-                        </div>
-                    </div>
-
+                    </form>
 
                     <div class="mt-5 d-flex justify-content-center">
-                        <button style=" font-size: 2rem">submit</button>
+                        <button id="btnSaveCustomer" style=" font-size: 2rem">submit</button>
                     </div>
 
                 </div>
