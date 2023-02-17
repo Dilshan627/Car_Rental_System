@@ -21,4 +21,27 @@ public class CustomerController {
         return new ResponseUtil("200", "Successfully Registered.", null);
     }
 
+    @GetMapping(path = "/{id}")
+    public ResponseUtil searchCustomer(@PathVariable String id) {
+        return new ResponseUtil("200", "Ok.", customerService.searchCustomer(id));
+    }
+
+    @PutMapping
+    public ResponseUtil updateCustomer(@RequestBody CustomerDTO cusDto) {
+        customerService.updateCustomer(cusDto);
+        return new ResponseUtil("200", "Successfully Updated.", null);
+    }
+
+    @DeleteMapping(params = {"id"})
+    public ResponseUtil deleteCustomer(@RequestParam String id) {
+        customerService.deleteCustomer(id);
+        return new ResponseUtil("200", "Successfully Deleted.", null);
+    }
+
+    @GetMapping
+    public ResponseUtil getAllCustomer() {
+        return new ResponseUtil("200", "Ok", customerService.getAllCustomers());
+    }
+
+
 }
