@@ -129,6 +129,29 @@ $("#btnSaveCustomer").click(function () {
 });
 
 
+
+
+customerLoad();
+
+function customerLoad() {
+    $("#customerTable").empty();
+
+    $.ajax({
+        url: baseURL + "customer",
+        dataType: "json",
+        success: function (resp) {
+            for (let cus of resp.data) {
+                var row = '<tr><td>' + cus.id + '</td><td>' + cus.customerUserName + '</td><td>' + cus.customerFullName + '</td><td>' + cus.customerContact
+                    + '</td><td>' + cus.customerAddress + '</td><td>' + cus.customerEmail + '</td><td>' + cus.customerNicNo + '</td><td>' + cus.customerDrivingLicenseNo + '</td></tr>';
+                $("#customerTable").append(row);
+
+            }
+        }
+    });
+}
+
+
+
 function customerRegisterFormClear() {
     $('#rCustomerName').val("");
     $('#rCustomerFName').val("");

@@ -1,16 +1,15 @@
 let baseURL = "http://localhost:8080/Back_End_war/";
 $("#log-dash-board-customer").click(function () {
 
-    /* $("#customer_screen").css('display', 'block');
+    $("#customer_screen").css('display', 'block');
 
-     $('#loading_page').css('display', 'none');
-     $("#login_screen").css('display', 'none');
-     $("#admin_screen").css('display', 'none');
-     $("#driver_screen").css('display', 'none');*/
+    $('#loading_page').css('display', 'none');
+    $("#login_screen").css('display', 'none');
+    $("#admin_screen").css('display', 'none');
+    $("#driver_screen").css('display', 'none');
 
-    let userName = $("#userName").val();
-    let password = $("#password").val();
-
+    /* let userName = $("#userName").val();
+     let password = $("#password").val();*/
 
 
 });

@@ -120,19 +120,10 @@ $("#btn-signUp").click(function () {
 
     $('#loading_page').css('display', 'none');
 
-    $('#rCustomerName').val("");
-    $('#rCustomerFName').val("");
-    $('#rCustomerNumber').val("");
-    $('#rCustomerAddress').val("");
-    $('#rCustomerEmail').val("");
-    $('#rCustomerPassword').val("");
-    $('#rCustomerNic').val("");
-    $('#rCustomerLicenseNumber').val("");
-    $('#rCustomerNicImage').val("");
-    $('#rCustomerLicenseImage').val("");
 
 });
 
+/*
 $("#back-dash-board").click(function () {
     $('#loading_page').css('display', 'block');
 
@@ -140,8 +131,7 @@ $("#back-dash-board").click(function () {
     $("#admin_screen").css('display', 'none');
     $("#driver_screen").css('display', 'none');
 });
-
-
+*/
 
 
 

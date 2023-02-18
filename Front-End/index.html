@@ -13,13 +13,6 @@
 
     <link href="style/Styles.css" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
-    <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet"/>
-
 
 </head>
 <body>
@@ -285,72 +278,16 @@
 <section class="container-fluid" id="login_screen" style="height: 80vh;align-items: center">
 
     <div class="col-md-3 position-absolute top-50 start-50 translate-middle" style="height: 50vh;">
+        <h1 style="justify-content: center;align-items: center;display: flex;">Login</h1>
+        <input class="mt-3" id="userName" placeholder="User Name" style="font-size: 20px;width: 95%" type="text">
 
-        <!--        <h1 style="justify-content: center;align-items: center;display: flex;">Login</h1>-->
-        <!--        <input class="mt-3" id="userName" placeholder="User Name" style="font-size: 20px;width: 95%" type="text">-->
-        <!--        <input class="mt-3" id="userAddress" placeholder="Password" style="font-size: 20px;width: 95%" type="password">-->
-        <!--        <button class="mt-3" id="back-dash-board">back</button>-->
-        <!--        <button class="mt-3" id="log-dash-board-admin">log admin</button>-->
-        <!--        <button class="mt-3" id="log-dash-board-driver">log driver</button>-->
-        <!--        <button class="mt-3" id="log-dash-board-customer">log customer</button>-->
+        <input class="mt-3" id="userAddress" placeholder="Password" style="font-size: 20px;width: 95%" type="password">
 
-        <form>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-                <input class="form-control" id="userName" type="email"/>
-                <label class="form-label" for="userName">user name</label>
-            </div>
+        <button class="mt-3" id="back-dash-board">back</button>
+        <button class="mt-3" id="log-dash-board-admin">log admin</button>
+        <button class="mt-3" id="log-dash-board-driver">log driver</button>
+        <button class="mt-3" id="log-dash-board-customer">log customer</button>
 
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-                <input class="form-control" id="password" type="password"/>
-                <label class="form-label" for="password">Password</label>
-            </div>
-
-            <!-- 2 column grid layout for inline styling -->
-            <div class="row mb-4">
-                <div class="col d-flex justify-content-center">
-                    <!-- Checkbox -->
-                    <div class="form-check">
-                        <input checked class="form-check-input" id="form2Example34" type="checkbox" value=""/>
-                        <label class="form-check-label" for="form2Example34"> Remember me </label>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <!-- Simple link -->
-                    <a href="#!">Forgot password?</a>
-                </div>
-            </div>
-
-            <!-- Submit button -->
-            <button class="btn btn-primary btn-block mb-4" id="log-dash-board-customer" type="submit">customer login
-            </button>
-            <button class="btn btn-primary btn-block mb-4" id="log-dash-board-driver" type="submit">driver login
-            </button>
-            <button class="btn btn-primary btn-block mb-4" id="log-dash-board-admin" type="submit">admin login</button>
-
-            <!-- Register buttons -->
-            <div class="text-center">
-                <p>Not a member? <a href="#!">Register</a></p>
-                <p>or sign up with:</p>
-                <button class="btn btn-secondary btn-floating mx-1" type="button">
-                    <i class="fab fa-facebook-f"></i>
-                </button>
-
-                <button class="btn btn-secondary btn-floating mx-1" type="button">
-                    <i class="fab fa-google"></i>
-                </button>
-
-                <button class="btn btn-secondary btn-floating mx-1" type="button">
-                    <i class="fab fa-twitter"></i>
-                </button>
-
-                <button class="btn btn-secondary btn-floating mx-1" type="button">
-                    <i class="fab fa-github"></i>
-                </button>
-            </div>
-        </form>
 
     </div>
 
@@ -394,8 +331,65 @@
             </div>
 
             <!--           admin driver dashboard -->
-            <div id="driver_dashboard" style="height: 100%; background-color: green">
+            <div id="driver_dashboard" style="height: 100%;">
+                <div class="d-flex flex-column justify-content-between"
+                     lass="d-flex flex-column justify-content-between" style="height: 100%;width: 100%">
 
+                    <div style="height: 15%;">
+                        <h1 class="d-flex justify-content-center " style="align-items: center;">Driver</h1>
+                    </div>
+                    <div style="height: 50%;">
+                        <table class="table table-hover">
+                            <thead class="bg-secondary">
+                            <tr>
+                                <th>Id</th>
+                                <th>Driver Name</th>
+                                <th>Address</th>
+                                <th>Age</th>
+                                <th>Contact</th>
+
+                            </tr>
+                            </thead>
+                            <tbody id="driverTable"></tbody>
+
+
+                        </table>
+
+                    </div>
+                    <div style="height: 30%;">
+
+                        <form id="driverForm">
+                            <div class="d-flex justify-content-evenly">
+                                <div>
+                                    <label class="form-label" for="driverName">Driver Name:</label>
+                                    <input class="form-control" id="driverName" name="driverName" type="text">
+                                </div>
+                                <div>
+                                    <label class="form-label" for="driverAddress">Address:</label>
+                                    <input class="form-control" id="driverAddress" name="driverAddress" type="text">
+                                </div>
+                                <div>
+                                    <label class="form-label" for="driverAge">Age:</label>
+                                    <input class="form-control" id="driverAge" name="driverAge" type="text">
+                                </div>
+                                <div>
+                                    <label class="form-label" for="driverContact">Contact:</label>
+                                    <input class="form-control" id="driverContact" name="driverContact" type="text">
+                                </div>
+                                <div>
+                                    <label class="form-label" for="driverPassword">Password:</label>
+                                    <input class="form-control" id="driverPassword" name="driverPassword"
+                                           type="password">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="mt-5 d-flex justify-content-center">
+                            <button class="btn btn-primary" id="btnSaveDriver" type="button">Add</button>
+                            <button class="btn btn-danger" id="btnClearDriver" type="button">Clear</button>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
 
@@ -409,15 +403,14 @@
                         <table class="table table-hover">
                             <thead class="bg-secondary">
                             <tr>
-                                <!--                        <th>Schedule Id</th>-->
-                                <th>Reserve Id</th>
-                                <th>Car Id</th>
-                                <th>Driver Id</th>
-                                <th>Pickup Date</th>
-                                <th>Pickup Time</th>
-                                <th>Return Date</th>
-                                <th>Return Time</th>
-                                <th>Status</th>
+                                <th>Id</th>
+                                <th>user name</th>
+                                <th>full name</th>
+                                <th>Contact</th>
+                                <th>address</th>
+                                <th>Email</th>
+                                <th>Nic number</th>
+                                <th>License number</th>
                             </tr>
                             </thead>
                             <tbody id="customerTable"></tbody>
@@ -680,7 +673,7 @@
                             <div class="mt-5">
                                 <label class="form-label" for="rCustomerName">User Name:</label>
                                 <input class="form-control" id="rCustomerName" name="customerUserName" type="text">
-                                <span></span>
+
                             </div>
                             <div class="mt-5">
                                 <label class="form-label" for="rCustomerFName">Full Name:</label>
@@ -751,60 +744,15 @@
 </section>
 
 
-<!--                Driver Register
-<div id="driver_register_screen" style="height: 100%; background-color: rgb(237, 237, 237);">
-
-    <div class="d-flex justify-content-around">
-        <div class="mt-5 col-md-5">
-            <label class="form-label" for="Ptime">Driver Name:</label>
-            <input class="form-control" id="Ptime" type="text">
-        </div>
-        <div class="mt-5 col-md-5">
-            <label class="form-label" for="Ptime">Driver Address:</label>
-            <input class="form-control" id="Ptime" type="text">
-        </div>
-    </div>
-
-    <div class="d-flex justify-content-around">
-        <div class="mt-5 col-md-5">
-            <label class="form-label" for="Ptime">Age:</label>
-            <input class="form-control" id="Ptime" type="text">
-        </div>
-        <div class="mt-5 col-md-5">
-            <label class="form-label" for="Ptime">Contact Number:</label>
-            <input class="form-control" id="Ptime" type="text">
-        </div>
-    </div>
-
-    &lt;!&ndash;  <div class="d-flex justify-content-around">
-          <div class="mt-5 col-md-5">
-              <label class="form-label" for="Ptime">Full Name:</label>
-              <input class="form-control" id="Ptime" type="text">
-          </div>
-
-      </div>&ndash;&gt;
-
-
-    <div class="mt-5 d-flex justify-content-center">
-        <button style=" font-size: 2rem">submit</button>
-    </div>
-
-
-</div>-->
-
-
-<!-- MDB -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js" type="text/javascript"></script>
-
 <script crossorigin="anonymous"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="controller/DashBoardController.js"></script>
 <script src="controller/loginController.js"></script>
-<script src="controller/AdminController.js"></script>
 <script src="controller/NavigationController.js"></script>
-<script src="controller/CustomerRegisterController.js"></script>
+<script src="controller/CustomerController.js"></script>
+<script src="controller/DriverController.js"></script>
 
 </body>
 </html>
