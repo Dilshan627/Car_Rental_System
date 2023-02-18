@@ -104,31 +104,43 @@ $("#rCustomerLicenseNumber").keyup(function (event) {
 ////////////////////////////////////////////////
 
 
-let baseURL = "http://localhost:8080/Back_End_war/";
-// http://localhost:8080/Back_End_war/
+/*let baseURL = "http://localhost:8080/Back_End_war/";
+// http://localhost:8080/Back_End_war/*/
 $("#btnSaveCustomer").click(function () {
 
-    var formData = $("#customerRegisterForm").serialize();
+    let formData = $("#customerRegisterForm").serialize();
 
     console.log(formData)
 
-    $.ajax({
-        url: baseURL + "customer",
-        method: "post",
-        data: formData,
-        dataType: "json",
-        success: function (res) {
-            alert(res.message);
-            loadAllCustomers();
-        },
-        error: function (error) {
-            var jsObject = JSON.parse(error.responseText);
-            alert(jsObject.message);
-        }
-    });
+      $.ajax({
+          url: baseURL + "customer",
+          method: "post",
+          data: formData,
+          dataType: "json",
+          success: function (res) {
+              alert(res.message);
+              customerRegisterFormClear();
+          },
+          error: function (error) {
+              var jsObject = JSON.parse(error.responseText);
+              alert(jsObject.message);
+          }
+      });
 });
 
 
+function customerRegisterFormClear() {
+    $('#rCustomerName').val("");
+    $('#rCustomerFName').val("");
+    $('#rCustomerNumber').val("");
+    $('#rCustomerAddress').val("");
+    $('#rCustomerEmail').val("");
+    $('#rCustomerPassword').val("");
+    $('#rCustomerNic').val("");
+    $('#rCustomerLicenseNumber').val("");
+    $('#rCustomerNicImage').val("");
+    $('#rCustomerLicenseImage').val("");
+}
 
 
 
