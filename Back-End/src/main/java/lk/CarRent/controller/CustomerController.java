@@ -15,7 +15,7 @@ public class CustomerController {
     CustomerService customerService;
 
     @PostMapping
-    public ResponseUtil saveCustomer(@ModelAttribute CustomerDTO customer) {
+    public ResponseUtil saveCustomer(@RequestBody CustomerDTO customer) {
         System.out.println(customer);
         customerService.saveCustomer(customer);
         return new ResponseUtil("200", "Successfully Registered.", null);
