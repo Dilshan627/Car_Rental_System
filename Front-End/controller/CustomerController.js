@@ -108,27 +108,77 @@ $("#rCustomerLicenseNumber").keyup(function (event) {
 // http://localhost:8080/Back_End_war/*/
 $("#btnSaveCustomer").click(function () {
 
-    let formData = $("#customerRegisterForm").serialize();
+    /*  if ($("#username").val() == "" || $("#password").val() == "" || $("#customername").val() == "" || $("#customeraddress").val() == "" ||
+          $("#contactnumber").val() == "" || $("#email").val() == "" || $("#nic").val() == "" || $("#drivinglicense").val() == "" ){
+          alert("All Fields Are Required !");
+         if ($('#uploadmyimage').get(0).files.length === 0 || $('#uploadnicimage').get(0).files.length === 0 || $('#uploaddrivinglicence').get(0).files.length === 0) {
+      }*/
+    customerRegister();
 
-    console.log(formData)
+    /*  let formData = $("#customerRegisterForm").serialize();
 
-      $.ajax({
-          url: baseURL + "customer",
-          method: "post",
-          data: formData,
-          dataType: "json",
-          success: function (res) {
-              alert(res.message);
-              customerRegisterFormClear();
-          },
-          error: function (error) {
-              var jsObject = JSON.parse(error.responseText);
-              alert(jsObject.message);
-          }
-      });
+      console.log(formData)
+
+        $.ajax({
+            url: baseURL + "customer",
+            method: "post",
+            data: formData,
+            dataType: "json",
+            success: function (res) {
+                alert(res.message);
+                customerRegisterFormClear();
+            },
+            error: function (error) {
+                var jsObject = JSON.parse(error.responseText);
+                alert(jsObject.message);
+            }
+        });*/
 });
 
 
+function customerRegister() {
+    let name = $('#rCustomerName').val();
+    let fname = $('#rCustomerFName').val();
+    let number = $('#rCustomerNumber').val();
+    let address = $('#rCustomerAddress').val();
+    let email = $('#rCustomerEmail').val();
+    let password = $('#rCustomerPassword').val();
+    let nicnum = $('#rCustomerNic').val();
+    let licenum = $('#rCustomerLicenseNumber').val();
+    let nicUrl = $('#rCustomerNicImage')[0].files[0].name;
+    let licenseUrl = $('#rCustomerLicenseImage')[0].files[0].name;
+
+    var customer = {
+        customerUserName: name,
+        customerFullName: fname,
+        customerContact: number,
+        customerAddress: address,
+        customerEmail: email,
+        customerPassword: password,
+        customerNicNo: nicnum,
+        customerDrivingLicenseNo: licenum,
+        NICImage: nicUrl,
+        DrivingLicenseImage: licenseUrl
+    }
+
+
+    console.log(customer);
+
+    $.ajax({
+        url: baseURL + 'customer',
+        method: 'post',
+        contentType: "application/json",
+        data: JSON.stringify(customer),
+        success: function (res) {
+            alert(res.message);
+            customerRegisterFormClear();
+        },
+        error: function (error) {
+            var jsObject = JSON.parse(error.responseText);
+            alert(jsObject.message);
+        }
+    });
+}
 
 
 customerLoad();
@@ -149,7 +199,6 @@ function customerLoad() {
         }
     });
 }
-
 
 
 function customerRegisterFormClear() {
