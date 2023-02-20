@@ -295,7 +295,7 @@
 
 
 <!--admin dashboard-->
-<section class="container-fluid" id="admin_screen" style="height: 99vh;">
+<section id="admin_screen" style="height: 99vh;">
     <div class="d-flex" style="height: 100%; width: 100%;">
         <div class="d-flex flex-column justify-content-between"
              style="height: 100%; width: 15%; background-color: rgb(237, 237, 237);">
@@ -369,7 +369,7 @@
                 <div style="height: 10%;">
                     <h1 class="d-flex justify-content-center " style="align-items: center;">car</h1>
                 </div>
-                <div style="height: 40%; overflow-x: scroll">
+                <div style="height: 40%; overflow-x: scroll;width: 100%!important;">
                     <table class="table table-hover">
                         <thead class="bg-secondary">
                         <tr>
@@ -382,12 +382,12 @@
                             <th>Fuel Type</th>
                             <th>Daily rate</th>
                             <th>Monthly rate</th>
-                            <th>Free mileage price</th>
-                            <th>Duration</th>
+                            <th>Free Km for a Day</th>
+                            <th>Free Km for a month</th>
                             <th>Price extra KM</th>
                             <th>Damage</th>
                             <th>Maintain</th>
-
+                            <th>status</th>
                             <th></th>
 
                         </tr>
@@ -406,13 +406,27 @@
                         </div>
                         <div>
                             <label class="form-label" for="carBrand">Car Brand:</label>
-                            <input class="form-control" id="carBrand" name="driverName" type="text">
+                            <select class="form-select" id="carBrand">
+                                <option>Suzuki Alto - Premium</option>
+                                <option>Suzuki Alto K10</option>
+                                <option>Suzuki Celerio</option>
+                                <option>Perodua (Daihatsu) Axia</option>
+                                <option>Toyota Prius C/ Aqua</option>
+                                <option>Toyota Corolla Axio/ NZE141</option>
+                                <option>Perodua Bezza Prime Sedan-Auto (2017)</option>
+                                <option>Toyota Allion NZT 260</option>
+                                <option>Toyota Axio NKR 165</option>
+                                <option>Toyota Premio</option>
+                                <option>Mercedes</option>
+                                <option>BMW i8</option>
+                            </select>
                         </div>
                         <div>
                             <label class="form-label" for="carType">CAR Type:</label>
                             <select class="form-select" id="carType">
-                                <option>mini</option>
-                                <option>luxury</option>
+                                <option>General</option>
+                                <option>Premium</option>
+                                <option>Luxury</option>
                             </select>
                         </div>
 
@@ -454,12 +468,12 @@
                             <input class="form-control" id="monthlyRate" name="driverName" type="text">
                         </div>
                         <div>
-                            <label class="form-label" for="mileagePrice">Free mileage price:</label>
-                            <input class="form-control" id="mileagePrice" name="driverName" type="text">
+                            <label class="form-label" for="FreKmDay">Free Km for a Day:</label>
+                            <input class="form-control" id="FreKmDay" name="driverName" type="text">
                         </div>
                         <div>
-                            <label class="form-label" for="duration">Duration:</label>
-                            <input class="form-control" id="duration" name="driverName" type="text">
+                            <label class="form-label" for="FreKmMonth">Free Km for a month:</label>
+                            <input class="form-control" id="FreKmMonth" name="driverName" type="text">
                         </div>
                         <div>
                             <label class="form-label" for="extraKM">Price extra KM:</label>
@@ -467,13 +481,25 @@
                         </div>
                         <div>
                             <label class="form-label" for="damage">Damage:</label>
-                            <input class="form-control" id="damage" name="driverName" type="text">
+                            <select class="form-select" id="damage">
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
                         </div>
                         <div>
                             <label class="form-label" for="maintain">Maintain:</label>
-                            <input class="form-control" id="maintain" name="driverName" type="text">
+                            <select class="form-select" id="maintain">
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
                         </div>
-
+                        <div>
+                            <label class="form-label" for="status">status:</label>
+                            <select class="form-select" id="status">
+                                <option>Available</option>
+                                <option>Not Available</option>
+                            </select>
+                        </div>
 
                     </div>
 
@@ -499,13 +525,13 @@
                     </div>
                     <div class="d-flex justify-content-center" style="height: 25%">
                         <div>
-                            <button class="btn btn-primary" type="button">Add</button>
+                            <button class="btn btn-primary" id="btnCarAdd" type="button">Add</button>
                         </div>
                         <div>
-                            <button class="btn btn-warning" type="button">Update</button>
+                            <button class="btn btn-warning" id="btnCarUpdate" type="button">Update</button>
                         </div>
                         <div>
-                            <button class="btn btn-danger" type="button">Delete</button>
+                            <button class="btn btn-danger" id="btnCarDelete" type="button">Delete</button>
                         </div>
                     </div>
 
@@ -937,6 +963,7 @@
 <script src="controller/NavigationController.js"></script>
 <script src="controller/CustomerController.js"></script>
 <script src="controller/DriverController.js"></script>
+<script src="controller/CarController.js"></script>
 
 </body>
 </html>
