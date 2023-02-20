@@ -132,4 +132,78 @@ $("#maintain").keyup(function (event) {
     }
 });
 
+$("#btnCarAdd").click(function () {
+    if ($("#carRegistrationNO").val() == "" || $("#carBrand").val() == "" || $("#carType").val() == "" || $("#carColor").val() == "" ||
+        $("#passengers").val() == "" || $("#transmissionType").val() == "" || $("#fuelType").val() == "" || $("#dailyRate").val() == "" ||
+        $("#monthlyRate").val() == "" || $("#FreKmDay").val() == "" || $("#FreKmMonth").val() == "" || $("#extraKM").val() == "" ||
+        $("#damage").val() == "" || $("#maintain").val() == "" || $("#status").val() == "" ||
+        $('#carFrontView').get(0).files.length === 0 || $('#carBackView').get(0).files.length === 0 ||
+        $('#carSideView').get(0).files.length === 0 || $('#carInteriorView').get(0).files.length === 0) {
+        alert("All Fields Are Required !");
+    } else {
+        carSave();
+    }
+});
 
+
+function carSave() {
+    let registrationNO = $('#carRegistrationNO').val();
+    let carBrand = $('#carBrand').val();
+    let carType = $('#carType').val();
+    let carColor = $('#carColor').val();
+    let passengers = $('#passengers').val();
+    let transmissionType = $('#transmissionType').val();
+    let fuelType = $('#fuelType').val();
+    let dailyRate = $('#dailyRate').val();
+    let monthlyRate = $('#monthlyRate').val();
+    let FreKmDay = $('#FreKmDay').val();
+    let FreKmMonth = $('#FreKmMonth').val();
+    let extraKM = $('#extraKM').val();
+    let damage = $('#damage').val();
+    let maintain = $('#maintain').val();
+    let status = $('#status').val();
+    let carFrontView = $('#carFrontView')[0].files[0].name;
+    let carBackView = $('#carBackView')[0].files[0].name;
+    let carSideView = $('#carSideView')[0].files[0].name;
+    let carInteriorView = $('#carInteriorView')[0].files[0].name;
+
+    var car = {
+        registrationNO: registrationNO,
+        carBrand: carBrand,
+        carType: carType,
+        carColor: carColor,
+        passengers: passengers,
+        transmissionType: transmissionType,
+        fuelType: fuelType,
+        dailyRate: dailyRate,
+        monthlyRate: monthlyRate,
+        FreKmDay: FreKmDay,
+        FreKmMonth: FreKmMonth,
+        extraKM: extraKM,
+        damage: damage,
+        maintain: maintain,
+        status: status,
+        carFrontView: carFrontView,
+        carBackView: carBackView,
+        carSideView: carSideView,
+        carInteriorView: carInteriorView
+    }
+
+
+    console.log(car);
+
+   /* $.ajax({
+        url: baseURL + 'car',
+        method: 'post',
+        contentType: "application/json",
+        data: JSON.stringify(car),
+        success: function (res) {
+            alert(res.message);
+            customerRegisterFormClear();
+        },
+        error: function (error) {
+            var jsObject = JSON.parse(error.responseText);
+            alert(jsObject.message);
+        }
+    });*/
+}
