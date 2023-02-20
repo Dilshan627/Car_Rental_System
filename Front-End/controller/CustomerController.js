@@ -108,31 +108,14 @@ $("#rCustomerLicenseNumber").keyup(function (event) {
 // http://localhost:8080/Back_End_war/*/
 $("#btnSaveCustomer").click(function () {
 
-    /*  if ($("#username").val() == "" || $("#password").val() == "" || $("#customername").val() == "" || $("#customeraddress").val() == "" ||
-          $("#contactnumber").val() == "" || $("#email").val() == "" || $("#nic").val() == "" || $("#drivinglicense").val() == "" ){
-          alert("All Fields Are Required !");
-         if ($('#uploadmyimage').get(0).files.length === 0 || $('#uploadnicimage').get(0).files.length === 0 || $('#uploaddrivinglicence').get(0).files.length === 0) {
-      }*/
-    customerRegister();
+    if ($("#rCustomerName").val() == "" || $("#rCustomerPassword").val() == "" || $("#rCustomerNumber").val() == "" || $("#rCustomerAddress").val() == "" ||
+        $("#rCustomerNumber").val() == "" || $("#rCustomerEmail").val() == "" || $("#rCustomerNic").val() == "" || $("#rCustomerLicenseNumber").val() == "" ||
+        $('#rCustomerNicImage').get(0).files.length === 0 || $('#rCustomerLicenseImage').get(0).files.length === 0) {
+        alert("All Fields Are Required !");
+    } else {
+        customerRegister();
+    }
 
-    /*  let formData = $("#customerRegisterForm").serialize();
-
-      console.log(formData)
-
-        $.ajax({
-            url: baseURL + "customer",
-            method: "post",
-            data: formData,
-            dataType: "json",
-            success: function (res) {
-                alert(res.message);
-                customerRegisterFormClear();
-            },
-            error: function (error) {
-                var jsObject = JSON.parse(error.responseText);
-                alert(jsObject.message);
-            }
-        });*/
 });
 
 

@@ -67,6 +67,17 @@ $("#driverPassword").keyup(function (event) {
 
 $("#btnSaveDriver").click(function () {
 
+    if ($("#driverName").val() == "" || $("#driverAddress").val() == "" || $("#driverAge").val() == "" || $("#driverContact").val() == "" ||
+        $("#driverPassword").val() == "") {
+        alert("All Fields Are Required !");
+    } else {
+        driverRegister();
+    }
+
+});
+
+
+function driverRegister() {
     let formData = $("#driverForm").serialize();
 
     console.log(formData)
@@ -85,9 +96,9 @@ $("#btnSaveDriver").click(function () {
             alert(jsObject.message);
         }
     });
+}
 
 
-});
 loadAlllDriver();
 
 function loadAlllDriver() {
