@@ -11,7 +11,7 @@ $("#log-dash-board-customer").click(function () {
     /* let userName = $("#userName").val();
      let password = $("#password").val();*/
 
-
+    carNameLoad();
 });
 
 $("#log-dash-board-admin").click(function () {

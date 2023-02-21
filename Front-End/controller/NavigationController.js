@@ -120,7 +120,6 @@ $("#btn-signUp").click(function () {
 
     $('#loading_page').css('display', 'none');
 
-
 });
 
 /*
