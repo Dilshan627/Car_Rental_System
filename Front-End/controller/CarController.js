@@ -81,32 +81,32 @@ $("#monthlyRate").keyup(function (event) {
     if (regExcMonthlyRate.test(rCustomerName)) {
         $('#monthlyRate').css({"border-color": "green"});
         if (event.key == "Enter") {
-            $("#FreKmDay").focus();
+            $("#FreeKmDay").focus();
         }
     } else {
         $('#monthlyRate').css({"border-color": "red"});
     }
 });
-$("#FreKmDay").keyup(function (event) {
-    let rCustomerName = $("#FreKmDay").val();
+$("#FreeKmDay").keyup(function (event) {
+    let rCustomerName = $("#FreeKmDay").val();
     if (regExcKmForaDay.test(rCustomerName)) {
-        $('#FreKmDay').css({"border-color": "green"});
+        $('#FreeKmDay').css({"border-color": "green"});
         if (event.key == "Enter") {
-            $("#FreKmMonth").focus();
+            $("#FreeKmMonth").focus();
         }
     } else {
-        $('#FreKmDay').css({"border-color": "red"});
+        $('#FreeKmDay').css({"border-color": "red"});
     }
 });
-$("#FreKmMonth").keyup(function (event) {
-    let rCustomerName = $("#FreKmMonth").val();
+$("#FreeKmMonth").keyup(function (event) {
+    let rCustomerName = $("#FreeKmMonth").val();
     if (regExcKmForaMonth.test(rCustomerName)) {
-        $('#FreKmMonth').css({"border-color": "green"});
+        $('#FreeKmMonth').css({"border-color": "green"});
         if (event.key == "Enter") {
             $("#extraKM").focus();
         }
     } else {
-        $('#FreKmMonth').css({"border-color": "red"});
+        $('#FreeKmMonth').css({"border-color": "red"});
     }
 });
 $("#extraKM").keyup(function (event) {
@@ -135,7 +135,7 @@ $("#maintain").keyup(function (event) {
 $("#btnCarAdd").click(function () {
     if ($("#carRegistrationNO").val() == "" || $("#carBrand").val() == "" || $("#carType").val() == "" || $("#carColor").val() == "" ||
         $("#passengers").val() == "" || $("#transmissionType").val() == "" || $("#fuelType").val() == "" || $("#dailyRate").val() == "" ||
-        $("#monthlyRate").val() == "" || $("#FreKmDay").val() == "" || $("#FreKmMonth").val() == "" || $("#extraKM").val() == "" ||
+        $("#monthlyRate").val() == "" || $("#FreeKmDay").val() == "" || $("#FreeKmMonth").val() == "" || $("#extraKM").val() == "" ||
         $("#damage").val() == "" || $("#maintain").val() == "" || $("#status").val() == "" ||
         $('#carFrontView').get(0).files.length === 0 || $('#carBackView').get(0).files.length === 0 ||
         $('#carSideView').get(0).files.length === 0 || $('#carInteriorView').get(0).files.length === 0) {
@@ -156,8 +156,8 @@ function carSave() {
     let fuelType = $('#fuelType').val();
     let dailyRate = $('#dailyRate').val();
     let monthlyRate = $('#monthlyRate').val();
-    let FreKmDay = $('#FreKmDay').val();
-    let FreKmMonth = $('#FreKmMonth').val();
+    let FreeKmDay = $('#FreeKmDay').val();
+    let FreeKmMonth = $('#FreeKmMonth').val();
     let extraKM = $('#extraKM').val();
     let damage = $('#damage').val();
     let maintain = $('#maintain').val();
@@ -177,8 +177,8 @@ function carSave() {
         fuelType: fuelType,
         dailyRate: dailyRate,
         monthlyRate: monthlyRate,
-        FreKmDay: FreKmDay,
-        FreKmMonth: FreKmMonth,
+        FreeKmDay: FreeKmDay,
+        FreeKmMonth: FreeKmMonth,
         extraKM: extraKM,
         damage: damage,
         maintain: maintain,
@@ -192,18 +192,62 @@ function carSave() {
 
     console.log(car);
 
-   /* $.ajax({
+    $.ajax({
         url: baseURL + 'car',
         method: 'post',
         contentType: "application/json",
         data: JSON.stringify(car),
         success: function (res) {
             alert(res.message);
-            customerRegisterFormClear();
+            carRegisterFormClear();
+            loadAllCar();
         },
         error: function (error) {
             var jsObject = JSON.parse(error.responseText);
             alert(jsObject.message);
         }
-    });*/
+    });
+}
+
+loadAllCar();
+
+function loadAllCar() {
+    $("#carTable").empty();
+
+    $.ajax({
+        url: baseURL + "car",
+        dataType: "json",
+        success: function (resp) {
+            for (let cus of resp.data) {
+                var row = '<tr><td>' + cus.registrationNO + '</td><td>' + cus.carBrand + '</td><td>' + cus.carType + '</td><td>' + cus.carColor
+                    + '</td><td>' + cus.passengers + '</td><td>' + cus.transmissionType + '</td><td>' + cus.fuelType + '</td><td>' + cus.dailyRate
+                    + '</td><td>' + cus.monthlyRate + '</td><td>' + cus.FreeKmDay + '</td><td>' + cus.FreeKmMonth + '</td><td>' + cus.extraKM
+                    + '</td><td>' + cus.damage + '</td><td>' + cus.maintain + '</td><td>' + cus.status + '</td></tr>';
+                $("#carTable").append(row);
+
+            }
+        }
+    });
+}
+
+function carRegisterFormClear() {
+    $('#carRegistrationNO').val();
+    $('#carBrand').val("");
+    $('#carType').val("");
+    $('#carColor').val("");
+    $('#passengers').val("");
+    $('#transmissionType').val("");
+    $('#fuelType').val("");
+    $('#dailyRate').val("");
+    $('#monthlyRate').val("");
+    $('#FreKmDay').val("");
+    $('#FreKmMonth').val("");
+    $('#extraKM').val("");
+    $('#damage').val("");
+    $('#maintain').val("");
+    $('#status').val("");
+    $('#carFrontView').val("");
+    $('#carBackView').val("");
+    $('#carSideView').val("");
+    $('#carInteriorView').val("");
 }

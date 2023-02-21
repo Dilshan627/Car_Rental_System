@@ -382,8 +382,8 @@
                             <th>Fuel Type</th>
                             <th>Daily rate</th>
                             <th>Monthly rate</th>
-                            <th>Free Km for a Day</th>
-                            <th>Free Km for a month</th>
+                            <th>Free Km Day</th>
+                            <th>Free Km month</th>
                             <th>Price extra KM</th>
                             <th>Damage</th>
                             <th>Maintain</th>
@@ -403,11 +403,11 @@
 
                         <div>
                             <label class="form-label" for="carRegistrationNO">Registration NO:</label>
-                            <input class="form-control" id="carRegistrationNO" name="driverName" type="text">
+                            <input class="form-control" id="carRegistrationNO" name="registrationNO" type="text">
                         </div>
                         <div>
                             <label class="form-label" for="carBrand">Car Brand:</label>
-                            <select class="form-select" id="carBrand">
+                            <select class="form-select" id="carBrand" name="carBrand">
                                 <option>Suzuki Alto - Premium</option>
                                 <option>Suzuki Alto K10</option>
                                 <option>Suzuki Celerio</option>
@@ -424,7 +424,7 @@
                         </div>
                         <div>
                             <label class="form-label" for="carType">CAR Type:</label>
-                            <select class="form-select" id="carType">
+                            <select class="form-select" id="carType" name="carType">
                                 <option>General</option>
                                 <option>Premium</option>
                                 <option>Luxury</option>
@@ -433,25 +433,26 @@
 
                         <div>
                             <label class="form-label" for="carColor">color:</label>
-                            <input class="form-control" id="carColor" name="driverName" type="text">
+                            <input class="form-control" id="carColor" name="carColor" type="text">
                         </div>
 
                         <div>
                             <label class="form-label" for="passengers">passengers:</label>
-                            <input class="form-control" id="passengers" name="driverName" type="text">
+                            <input class="form-control" id="passengers" name="passengers" type="text">
                         </div>
                         <div>
                             <label class="form-label" for="transmissionType">Transmission Type:</label>
-                            <select class="form-select" id="transmissionType">
-                                <option>Diesel</option>
-                                <option>Petrol</option>
+                            <select class="form-select" id="transmissionType" name="transmissionType">
+                                <option>Manual</option>
+                                <option>Auto</option>
                             </select>
                         </div>
                         <div>
                             <label class="form-label" for="fuelType">Fuel Type:</label>
-                            <select class="form-select" id="fuelType">
-                                <option>Manual</option>
-                                <option>Auto</option>
+                            <select class="form-select" id="fuelType" name="fuelType">
+
+                                <option>Diesel</option>
+                                <option>Petrol</option>
                             </select>
                         </div>
 
@@ -461,42 +462,42 @@
                     <div class="d-flex justify-content-between" style="height: 25%">
                         <div>
                             <label class="form-label" for="dailyRate">Daily rate:</label>
-                            <input class="form-control" id="dailyRate" name="driverName" type="text">
+                            <input class="form-control" id="dailyRate" name="dailyRate" type="text">
                         </div>
 
                         <div>
                             <label class="form-label" for="monthlyRate">Monthly rate:</label>
-                            <input class="form-control" id="monthlyRate" name="driverName" type="text">
+                            <input class="form-control" id="monthlyRate" name="monthlyRate" type="text">
                         </div>
                         <div>
-                            <label class="form-label" for="FreKmDay">Free Km for a Day:</label>
-                            <input class="form-control" id="FreKmDay" name="driverName" type="text">
+                            <label class="form-label" for="FreeKmDay">Free Km Day:</label>
+                            <input class="form-control" id="FreeKmDay" name="FreeKmDay" type="text">
                         </div>
                         <div>
-                            <label class="form-label" for="FreKmMonth">Free Km for a month:</label>
-                            <input class="form-control" id="FreKmMonth" name="driverName" type="text">
+                            <label class="form-label" for="FreeKmMonth">Free Km month:</label>
+                            <input class="form-control" id="FreeKmMonth" name="FreeKmMonth" type="text">
                         </div>
                         <div>
                             <label class="form-label" for="extraKM">Price extra KM:</label>
-                            <input class="form-control" id="extraKM" name="driverName" type="text">
+                            <input class="form-control" id="extraKM" name="extraKM" type="text">
                         </div>
                         <div>
                             <label class="form-label" for="damage">Damage:</label>
-                            <select class="form-select" id="damage">
+                            <select class="form-select" id="damage" name="damage">
                                 <option>Yes</option>
                                 <option>No</option>
                             </select>
                         </div>
                         <div>
                             <label class="form-label" for="maintain">Maintain:</label>
-                            <select class="form-select" id="maintain">
+                            <select class="form-select" id="maintain" name="maintain">
                                 <option>Yes</option>
                                 <option>No</option>
                             </select>
                         </div>
                         <div>
                             <label class="form-label" for="status">status:</label>
-                            <select class="form-select" id="status">
+                            <select class="form-select" id="status" name="status">
                                 <option>Available</option>
                                 <option>Not Available</option>
                             </select>
@@ -509,19 +510,19 @@
 
                         <div>
                             <label class="form-label" for="carFrontView">Front View:</label>
-                            <input class="form-control" id="carFrontView" name="driverName" type="file">
+                            <input class="form-control" id="carFrontView" name="carFrontView" type="file">
                         </div>
                         <div>
                             <label class="form-label" for="carBackView">Back View:</label>
-                            <input class="form-control" id="carBackView" name="driverName" type="file">
+                            <input class="form-control" id="carBackView" name="carBackView" type="file">
                         </div>
                         <div>
                             <label class="form-label" for="carSideView">Side View:</label>
-                            <input class="form-control" id="carSideView" name="driverName" type="file">
+                            <input class="form-control" id="carSideView" name="carSideView" type="file">
                         </div>
                         <div>
                             <label class="form-label" for="carInteriorView">Interior:</label>
-                            <input class="form-control" id="carInteriorView" name="driverName" type="file">
+                            <input class="form-control" id="carInteriorView" name="carInteriorView" type="file">
                         </div>
 
                     </div>
@@ -770,7 +771,7 @@
 
 
 <!--customer dashboard-->
-<section class="container-fluid" id="customer_screen" style="height: 90vh;">
+<section class="container-fluid" id="customer_screen" style="height: 130vh;">
     <div class="d-flex flex-column" style="height: 100%; width: 100%;">
         <div style="height: 20%">
             <h1 class="d-flex justify-content-center mt-5" style="align-items: center;">BOOKING</h1>
@@ -781,82 +782,151 @@
                 <div><h3 class="d-flex justify-content-center">Personal Details</h3></div>
                 <div class="d-flex justify-content-evenly" style="height: 70%;align-items: center">
 
-                    <input class="form-control" disabled id="PName" placeholder="Name"
-                           style="height: 35px; width: 25%" type="text">
-                    <input class="form-control" disabled id="PContact" placeholder="Contact"
-                           style="height: 35px; width: 25%" type="text">
-                    <input class="form-control" disabled id="PNic" placeholder="NIC Number"
-                           style="height: 35px; width: 25%" type="text">
+                    <input class="form-control" disabled id="cName" name="cName"
+                           placeholder="Name" style="height: 35px; width: 25%" type="text">
+                    <input class="form-control" disabled id="cContact" name="cContact"
+                           placeholder="Contact" style="height: 35px; width: 25%" type="text">
+                    <input class="form-control" disabled id="cNic" name="cNic"
+                           placeholder="NIC Number" style="height: 35px; width: 25%" type="text">
 
                 </div>
 
             </div>
-            <div class="d-flex flex-column" style="height: 70%">
-                <div><h3 class="d-flex justify-content-center">Booking Details</h3></div>
-                <div class="d-flex flex-column" style="height: 90%;background-color: rgb(237, 237, 237);">
+            <div class="d-flex flex-column" style="height: 10%">
+                <div><h3 class="d-flex justify-content-center">Car Booking</h3></div>
 
-                    <div class="mt-3 d-flex justify-content-evenly">
+            </div>
 
-                        <div class="d-flex flex-column" style="width: 25%">
-                            <label class="form-label" for="Pcar">Select Car:</label>
-                            <select class="form-select" id="Pcar"></select>
+            <div style="height: 100%">
+                <div class="d-flex justify-content-center" style="height: 50%;">
+
+                    <div style="width: 75%;">
+                        <div class="mt-3 d-flex justify-content-evenly">
+                            <div class="d-flex flex-column">
+                                <label class="form-label" for="bCar">Select Car:</label>
+                                <select class="form-select" id="bCar" name="bCar">
+                                    <option>Suzuki Alto - Premium</option>
+
+                                </select>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <label class="form-label" for="bCarNumber">Registration NO:</label>
+                                <input class="form-control" disabled id="bCarNumber" name="bCarNumber"
+                                       style="height: 35px;" type="text">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <label class="form-label" for="bCarType">Car Type:</label>
+                                <input class="form-control" disabled id="bCarType" name="bCarType"
+                                       style="height: 35px;" type="text">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <label class="form-label" for="bCarColor">Car Color:</label>
+                                <input class="form-control" disabled id="bCarColor" name=""
+                                       style="height: 35px;" type="text">
+                            </div>
                         </div>
-                        <div class="d-flex flex-column" style="width: 25%">
-                            <label class="form-label" for="Pdate">Pickup Date:</label>
-                            <input class="form-control" id="Pdate" type="date">
+                        <div class="mt-3 d-flex justify-content-evenly">
+                            <div class="d-flex flex-column">
+                                <label class="form-label" for="bPassengers">passengers:</label>
+                                <input class="form-control" disabled id="bPassengers" name="bPassengers"
+                                       style="height: 35px;" type="text">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <label class="form-label" for="bTransmissionType">transmissionType:</label>
+                                <input class="form-control" disabled id="bTransmissionType" name="bTransmissionType"
+                                       style="height: 35px;" type="text">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <label class="form-label" for="bFuelType">fuelType:</label>
+                                <input class="form-control" disabled id="bFuelType" name="bFuelType"
+                                       style="height: 35px;" type="text">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <label class="form-label" for="bDailyRate">Daily Rate:</label>
+                                <input class="form-control" disabled id="bDailyRate" name="bDailyRate"
+                                       style="height: 35px;" type="text">
+                            </div>
                         </div>
-                        <div class="d-flex flex-column" style="width: 25%">
-                            <label class="form-label" for="Ptime">Pickup Time:</label>
-                            <input class="form-control" id="Ptime" type="time">
+                        <div class="mt-3 d-flex justify-content-evenly">
+                            <div class="d-flex flex-column">
+                                <label class="form-label" for="bMonthlyRate">monthly Rate:</label>
+                                <input class="form-control" disabled id="bMonthlyRate" name="bMonthlyRate"
+                                       style="height: 35px;" type="text">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <label class="form-label" for="bExtraKM">Extra KM:</label>
+                                <input class="form-control" disabled id="bExtraKM" name="bExtraKM"
+                                       style="height: 35px;" type="text">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <label class="form-label" for="bAvailable">Available:</label>
+                                <input class="form-control" disabled id="bAvailable" name="bAvailable"
+                                       style="height: 35px;" type="text">
+                            </div>
+                            <div class="d-flex flex-column" style="height: 35px;width: 15%"></div>
                         </div>
 
                     </div>
+                    <div style="width: 25%;">
+                        <img src="assets/4-slide.png" style="width: 100%;height: 100%">
 
-
-                    <div class="mt-3 d-flex justify-content-evenly">
-
-                        <div class="d-flex flex-column" style="width: 25%">
-                            <label class="form-label" for="Pcar">Select Car:</label>
-                            <select class="form-select" id="Pcar"></select>
-                        </div>
-                        <div class="d-flex flex-column" style="width: 25%">
-                            <label class="form-label" for="Pdate">Pickup Date:</label>
-                            <input class="form-control" id="Pdate" type="date">
-                        </div>
-                        <div class="d-flex flex-column" style="width: 25%">
-                            <label class="form-label" for="Ptime">Pickup Time:</label>
-                            <input class="form-control" id="Ptime" type="time">
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="mt-3 d-flex justify-content-evenly">
-
-                        <div class="d-flex flex-column" style="width: 25%">
-                            <label class="form-label" for="Pcar">Select Car:</label>
-                            <select class="form-select" id="Pcar"></select>
-                        </div>
-                        <div class="d-flex flex-column" style="width: 25%">
-                            <label class="form-label" for="Pdate">Pickup Date:</label>
-                            <input class="form-control" id="Pdate" type="date">
-                        </div>
-                        <div class="d-flex flex-column" style="width: 25%">
-                            <label class="form-label" for="Ptime">Pickup Time:</label>
-                            <input class="form-control" id="Ptime" type="time">
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="d-flex justify-content-center" style="align-items: center">
-                        <button class="mt-5 col-md-1 ">CONTINUE CAR Booking</button>
                     </div>
 
                 </div>
+                <div class="d-flex justify-content-center" style="height: 50%;">
+
+                    <div style="width: 60%;height: 100%">
+                        <div style="height: 20%">
+                            <div class="mt-3 d-flex justify-content-evenly">
+                                <div class="d-flex flex-column">
+                                    <label class="form-label" for="bId">Booking ID:</label>
+                                    <input class="form-control" disabled id="bId" name="bId"
+                                           style="height: 35px;" type="text">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <label class="form-label" for="bPickupDate">Pickup Date:</label>
+                                    <input class="form-control" id="bPickupDate" name="bPickupDate"
+                                           style="height: 35px;" type="date">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <label class="form-label" for="bPickupTime">Pickup Time:</label>
+                                    <input class="form-control" id="bPickupTime" name="bPickupTime"
+                                           style="height: 35px;" type="time">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 20%">
+                            <div class="mt-3 d-flex justify-content-evenly">
+                                <div class="d-flex flex-column">
+                                    <label class="form-label" for="bReturnDate">Return Date:</label>
+                                    <input class="form-control" id="bReturnDate" name="bReturnDate"
+                                           style="height: 35px;" type="date">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <label class="form-label" for="bReturnTime">Return Tame:</label>
+                                    <input class="form-control" id="bReturnTime" name="bReturnTime"
+                                           style="height: 35px;" type="time">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <label class="form-label" for="bDriver">Driver:</label>
+                                    <select class="form-select" id="bDriver" name="bDriver">
+                                        <option>Yes</option>
+                                        <option>No</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 20%"></div>
+                        <div class="d-flex justify-content-evenly" style="height: 20%;">
+                            <button style="width: 25%;height: 55%">Booking</button>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
+
         </div>
 
     </div>
@@ -965,6 +1035,7 @@
 <script src="controller/CustomerController.js"></script>
 <script src="controller/DriverController.js"></script>
 <script src="controller/CarController.js"></script>
+<script src="controller/BookingController.js"></script>
 
 </body>
 </html>
