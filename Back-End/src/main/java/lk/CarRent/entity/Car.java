@@ -24,8 +24,8 @@ public class Car {
     private String fuelType;
     private String dailyRate;
     private String monthlyRate;
-    private String FreeKmDay;
-    private String FreeKmMonth;
+    private String freeKmDay;
+    private String freeKmMonth;
     private String extraKM;
     private String damage;
     private String maintain;

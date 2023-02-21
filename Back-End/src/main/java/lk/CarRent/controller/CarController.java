@@ -43,4 +43,8 @@ public class CarController {
         return new ResponseUtil("200", "Ok", carService.getAllCar());
     }
 
+    @GetMapping(path = "/search/{brand}")
+    public ResponseUtil getCar(@PathVariable("brand") String brand) {
+        return new ResponseUtil("200", "Successfully", carService.getCar(brand));
+    }
 }
