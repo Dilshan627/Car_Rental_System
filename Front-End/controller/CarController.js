@@ -81,32 +81,32 @@ $("#monthlyRate").keyup(function (event) {
     if (regExcMonthlyRate.test(rCustomerName)) {
         $('#monthlyRate').css({"border-color": "green"});
         if (event.key == "Enter") {
-            $("#FreeKmDay").focus();
+            $("#freeKmDay").focus();
         }
     } else {
         $('#monthlyRate').css({"border-color": "red"});
     }
 });
-$("#FreeKmDay").keyup(function (event) {
-    let rCustomerName = $("#FreeKmDay").val();
+$("#freeKmDay").keyup(function (event) {
+    let rCustomerName = $("#freeKmDay").val();
     if (regExcKmForaDay.test(rCustomerName)) {
-        $('#FreeKmDay').css({"border-color": "green"});
+        $('#freeKmDay').css({"border-color": "green"});
         if (event.key == "Enter") {
-            $("#FreeKmMonth").focus();
+            $("#freeKmMonth").focus();
         }
     } else {
-        $('#FreeKmDay').css({"border-color": "red"});
+        $('#freeKmDay').css({"border-color": "red"});
     }
 });
-$("#FreeKmMonth").keyup(function (event) {
-    let rCustomerName = $("#FreeKmMonth").val();
+$("#freeKmMonth").keyup(function (event) {
+    let rCustomerName = $("#freeKmMonth").val();
     if (regExcKmForaMonth.test(rCustomerName)) {
-        $('#FreeKmMonth').css({"border-color": "green"});
+        $('#freeKmMonth').css({"border-color": "green"});
         if (event.key == "Enter") {
             $("#extraKM").focus();
         }
     } else {
-        $('#FreeKmMonth').css({"border-color": "red"});
+        $('#freeKmMonth').css({"border-color": "red"});
     }
 });
 $("#extraKM").keyup(function (event) {
@@ -156,8 +156,8 @@ function carSave() {
     let fuelType = $('#fuelType').val();
     let dailyRate = $('#dailyRate').val();
     let monthlyRate = $('#monthlyRate').val();
-    let FreeKmDay = $('#FreeKmDay').val();
-    let FreeKmMonth = $('#FreeKmMonth').val();
+    let freeKmDay = $('#freeKmDay').val();
+    let freeKmMonth = $('#freeKmMonth').val();
     let extraKM = $('#extraKM').val();
     let damage = $('#damage').val();
     let maintain = $('#maintain').val();
@@ -177,8 +177,8 @@ function carSave() {
         fuelType: fuelType,
         dailyRate: dailyRate,
         monthlyRate: monthlyRate,
-        FreeKmDay: FreeKmDay,
-        FreeKmMonth: FreeKmMonth,
+        freeKmDay: freeKmDay,
+        freeKmMonth: freeKmMonth,
         extraKM: extraKM,
         damage: damage,
         maintain: maintain,
@@ -218,11 +218,11 @@ function loadAllCar() {
         url: baseURL + "car",
         dataType: "json",
         success: function (resp) {
-            for (let cus of resp.data) {
-                var row = '<tr><td>' + cus.registrationNO + '</td><td>' + cus.carBrand + '</td><td>' + cus.carType + '</td><td>' + cus.carColor
-                    + '</td><td>' + cus.passengers + '</td><td>' + cus.transmissionType + '</td><td>' + cus.fuelType + '</td><td>' + cus.dailyRate
-                    + '</td><td>' + cus.monthlyRate + '</td><td>' + cus.FreeKmDay + '</td><td>' + cus.FreeKmMonth + '</td><td>' + cus.extraKM
-                    + '</td><td>' + cus.damage + '</td><td>' + cus.maintain + '</td><td>' + cus.status + '</td></tr>';
+            for (let car of resp.data) {
+                var row = '<tr><td>' + car.registrationNO + '</td><td>' + car.carBrand + '</td><td>' + car.carType + '</td><td>' + car.carColor
+                    + '</td><td>' + car.passengers + '</td><td>' + car.transmissionType + '</td><td>' + car.fuelType + '</td><td>' + car.dailyRate
+                    + '</td><td>' + car.monthlyRate + '</td><td>' + car.freeKmDay + '</td><td>' + car.freeKmMonth + '</td><td>' + car.extraKM
+                    + '</td><td>' + car.damage + '</td><td>' + car.maintain + '</td><td>' + car.status + '</td></tr>';
                 $("#carTable").append(row);
 
             }
@@ -231,7 +231,7 @@ function loadAllCar() {
 }
 
 function carRegisterFormClear() {
-    $('#carRegistrationNO').val();
+    $('#carRegistrationNO').val("");
     $('#carBrand').val("");
     $('#carType').val("");
     $('#carColor').val("");
@@ -240,8 +240,8 @@ function carRegisterFormClear() {
     $('#fuelType').val("");
     $('#dailyRate').val("");
     $('#monthlyRate').val("");
-    $('#FreKmDay').val("");
-    $('#FreKmMonth').val("");
+    $('#freeKmDay').val("");
+    $('#freeKmMonth').val("");
     $('#extraKM').val("");
     $('#damage').val("");
     $('#maintain').val("");
