@@ -1,4 +1,9 @@
 let baseURL = "http://localhost:8080/Back_End_war/";
+$("#userName").keyup(function (event) {
+    if (event.key == "Enter") {
+        $("#password").focus();
+    }
+});
 $("#log-dash-board-customer").click(function () {
 
     $("#customer_screen").css('display', 'block');
@@ -10,9 +15,14 @@ $("#log-dash-board-customer").click(function () {
 
     /* let userName = $("#userName").val();
      let password = $("#password").val();*/
-
+    loginCustomer();
     carNameLoad();
 });
+
+
+function loginCustomer() {
+
+}
 
 $("#log-dash-board-admin").click(function () {
     $("#admin_screen").css('display', 'block');
@@ -34,3 +44,5 @@ $("#log-dash-board-driver").click(function () {
     $("#customer_screen").css('display', 'none');
 
 });
+
+
