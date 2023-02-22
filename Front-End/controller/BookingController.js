@@ -6,7 +6,11 @@ var bid = rollDice();
 
 $("#bId").val(bid);
 
-$("#cName").val("nimal");   ///////////////////////
+function loginCustomerDetails(cName, cContact, cNic) {
+    $("#cName").val(cName);
+    $("#cContact").val(cContact);
+    $("#cNic").val(cNic);
+}
 
 $("#bCar").click(function () {
     let carName = $("#bCar").val();
@@ -72,6 +76,8 @@ function bookingActive() {
     }
 }
 
-
+$("#btnBooking").click(function () {
+   alert("booking")
+});
 
 

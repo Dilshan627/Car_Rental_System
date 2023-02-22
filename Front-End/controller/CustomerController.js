@@ -199,11 +199,26 @@ function customerRegisterFormClear() {
 
 
 
+const searchInputCustomer = document.getElementById('searchInputCustomer');
+const table = document.getElementById('customerTable');
 
+searchInputCustomer.addEventListener('input', () => {
+    const searchValue = searchInputCustomer.value.toLowerCase();
+    const rows = table.querySelectorAll('tbody tr');
 
+    rows.forEach(row => {
+        // const id = row.querySelector('td:first-child').textContent.toLowerCase();
+        const name = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+        const contact = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+        const licenseNumber = row.querySelector('td:last-child').textContent.toLowerCase();
 
-
-
+        if (name.includes(searchValue) || contact.includes(searchValue) || licenseNumber.includes(searchValue)) {
+            row.classList.remove('hidden');
+        } else {
+            row.classList.add('hidden');
+        }
+    });
+});
 
 
 
