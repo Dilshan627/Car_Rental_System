@@ -43,4 +43,9 @@ public class DriverController {
         return new ResponseUtil("200", "Ok", driverService.getAllDrivers());
     }
 
+    @GetMapping("/available")
+    public ResponseUtil getAvailableDriver() {
+        return new ResponseUtil("200", "Ok", driverService.getAvailableDriver());
+    }
+
 }

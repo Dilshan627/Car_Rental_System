@@ -14,4 +14,6 @@ public interface DriverService {
     DriverDTO searchDriver(String id);
 
     List<DriverDTO> getAllDrivers();
+
+    List<DriverDTO>getAvailableDriver();
 }
