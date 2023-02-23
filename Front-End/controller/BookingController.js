@@ -60,24 +60,14 @@ function carNameLoad() {
 function bookingActive() {
     let val = $("#bAvailable").val();
     if (val == "Available") {
-        $("#bPickupDate").prop('disabled', false);
-        $("#bPickupTime").prop('disabled', false);
-        $("#bReturnDate").prop('disabled', false);
-        $("#bReturnTime").prop('disabled', false);
-        $("#bDriver").prop('disabled', false);
         $("#btnBooking").prop('disabled', false);
     } else {
-        $("#bPickupDate").prop('disabled', true);
-        $("#bPickupTime").prop('disabled', true);
-        $("#bReturnDate").prop('disabled', true);
-        $("#bReturnTime").prop('disabled', true);
-        $("#bDriver").prop('disabled', true);
         $("#btnBooking").prop('disabled', true);
     }
 }
 
 $("#btnBooking").click(function () {
-   alert("booking")
+    alert("booking")
 });
 
 

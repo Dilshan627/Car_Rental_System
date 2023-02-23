@@ -140,8 +140,8 @@ function customerRegister() {
         customerPassword: password,
         customerNicNo: nicnum,
         customerDrivingLicenseNo: licenum,
-        NICImage: nicUrl,
-        DrivingLicenseImage: licenseUrl
+        nicImage: nicUrl,
+        drivingLicenseImage: licenseUrl
     }
 
 
