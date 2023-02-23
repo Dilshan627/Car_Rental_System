@@ -20,4 +20,11 @@ public class ReserveController {
         reserveService.saveReserve(reserve);
         return new ResponseUtil("200", "Successfully Registered.", null);
     }
+
+    
+    @GetMapping("/pending")
+    public ResponseUtil pendingReserve() {
+        return new ResponseUtil("200", "Ok", reserveService.getAllReserves());
+    }
+
 }

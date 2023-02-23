@@ -5,6 +5,7 @@ import lk.CarRent.entity.Reserve;
 import lk.CarRent.repo.ReserveRepo;
 import lk.CarRent.service.ReserveService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,6 +42,8 @@ public class ReserveServiceImpl implements ReserveService {
 
     @Override
     public List<ReserveDTO> getAllReserves() {
-        return null;
+        List<Reserve> all = reserveRepo.getPendingReserve();
+        return mapper.map(all, new TypeToken<List<ReserveDTO>>() {
+        }.getType());
     }
 }

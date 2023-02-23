@@ -21,8 +21,8 @@ public class Reserve {
     private String customerContact;
     private String customerNic;
     private String carNumber;
-    private String piUpDate;
-    private String piUpTime;
+    private String pickupDate;
+    private String pickupTime;
     private String returnDate;
     private String returnTime;
     private String driverName;
