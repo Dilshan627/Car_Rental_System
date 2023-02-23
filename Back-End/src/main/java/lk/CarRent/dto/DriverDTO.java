@@ -16,4 +16,5 @@ public class DriverDTO {
     private String driverAge;
     private String driverContact;
     private String driverPassword;
+    private boolean status;
 }

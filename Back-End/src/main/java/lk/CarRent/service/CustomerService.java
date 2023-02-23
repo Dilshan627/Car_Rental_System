@@ -15,4 +15,6 @@ public interface CustomerService {
 
     List<CustomerDTO> getAllCustomers();
 
+    CustomerDTO findByCustomerUserNameAndCustomerPassword(String username, String password);
+
 }

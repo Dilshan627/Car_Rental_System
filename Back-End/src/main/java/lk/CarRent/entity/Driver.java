@@ -1,14 +1,8 @@
 package lk.CarRent.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
@@ -23,7 +17,7 @@ public class Driver {
     private String driverAddress;
     private String driverAge;
     private String driverContact;
-
     private String driverPassword;
-
+    @Column(name = "status", columnDefinition = "BIT default 0")
+    private boolean status;
 }

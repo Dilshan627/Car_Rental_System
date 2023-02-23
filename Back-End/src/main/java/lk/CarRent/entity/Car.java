@@ -22,11 +22,11 @@ public class Car {
     private String passengers;
     private String transmissionType;
     private String fuelType;
-    private String dailyRate;
-    private String monthlyRate;
-    private String freeKmDay;
-    private String freeKmMonth;
-    private String extraKM;
+    private int dailyRate;
+    private int monthlyRate;
+    private int freeKmDay;
+    private int freeKmMonth;
+    private int extraKM;
     private String damage;
     private String maintain;
     private String status;

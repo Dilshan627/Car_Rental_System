@@ -27,6 +27,6 @@ public class Customer {
     private String customerPassword;
     private String customerNicNo;
     private String customerDrivingLicenseNo;
-    private String NICImage;
-    private String DrivingLicenseImage;
+    private String nicImage;
+    private String drivingLicenseImage;
 }

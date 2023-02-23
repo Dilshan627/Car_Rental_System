@@ -66,5 +66,11 @@ public class CustomerServiceImpl implements CustomerService {
         }.getType());
     }
 
+    @Override
+    public CustomerDTO findByCustomerUserNameAndCustomerPassword(String username, String password) {
+        Customer customer = customerRepo.findByCustomerUserNameAndCustomerPassword(username, password);
+        return mapper.map(customer,CustomerDTO.class);
+    }
+
 
 }

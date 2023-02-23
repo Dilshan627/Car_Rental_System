@@ -43,5 +43,9 @@ public class CustomerController {
         return new ResponseUtil("200", "Ok", customerService.getAllCustomers());
     }
 
+    @GetMapping(path ="/{username}/{password}")
+    public ResponseUtil findByPasswordAndUsername(@PathVariable("username") String username, @PathVariable("password") String password){
+        return new ResponseUtil("200", "Ok", customerService.findByCustomerUserNameAndCustomerPassword(username,password));
+    }
 
 }
