@@ -319,7 +319,7 @@
                 <button class="login-button mt-2" id="btn_driver" type="button">Driver</button>
                 <button class="login-button mt-2" id="btn_customer" type="button">Customer</button>
                 <button class="login-button mt-2" id="btn_reservation" type="button">Reservations</button>
-                <button class="login-button mt-2" type="button">Reservations</button>
+                <button class="login-button mt-2" id="btn_details" type="button">Details</button>
                 <button class="login-button mt-2" id="btn_payment" type="button">Payment</button>
                 <button class="login-button mt-2" id="btn_income" type="button">Income Report</button>
 
@@ -384,7 +384,7 @@
                     <h1 class="d-flex justify-content-center " style="align-items: center;">car</h1>
                 </div>
                 <div style="height: 40%; overflow-x: scroll;width: 100%!important;">
-                    <table class="table table-hover">
+                    <table class="table table-hover" style="width: 120%">
                         <thead class="bg-secondary">
                         <tr>
                             <th>Registration NO</th>
@@ -625,7 +625,9 @@
                     <h1 class="d-flex justify-content-center" style="align-items: center;">customer</h1>
                 </div>
                 <div style="height: 78%">
-                    <input type="text" id="searchInputCustomer" placeholder="Search..." style="width: 50%;border-radius: 10px;margin-left: 25%;font-size: 20px">
+                    <input id="searchInputCustomer" placeholder="Search..."
+                           style="width: 50%;border-radius: 10px;margin-left: 25%;font-size: 20px"
+                           type="text">
                     <div class="col1 mt-4" style="height:80%; overflow-x: scroll">
                         <table class="table table-hover">
                             <thead class="bg-secondary">
@@ -653,21 +655,24 @@
             <!--          admin Reservations dashboard-->
             <div id="reservation_dashboard" style="height: 100%;">
                 <div style="height: 20%">
-                    <h1 class="d-flex justify-content-center " style="align-items: center;">Reservations</h1>
+                    <h1 class="d-flex justify-content-center" style="align-items: center;">Reservations</h1>
                 </div>
                 <div style="height: 78%">
                     <div class="col1" style="height:80%; overflow-x: scroll">
-                        <table class="table table-hover">
+                        <table class="table table-hover" style="width: 120%">
                             <thead class="bg-secondary">
                             <tr>
-                                <!--                        <th>Schedule Id</th>-->
-                                <th>Reserve Id</th>
-                                <th>Car Id</th>
-                                <th>Driver Id</th>
+                                <th>Booking Id</th>
+                                <th>Customer Name</th>
+                                <th>Customer NIC</th>
+                                <th>Customer Contact</th>
+                                <th>Car Number</th>
                                 <th>Pickup Date</th>
                                 <th>Pickup Time</th>
                                 <th>Return Date</th>
                                 <th>Return Time</th>
+                                <th>Driver Name</th>
+                                <th>Driver Contact</th>
                                 <th>Status</th>
                             </tr>
                             </thead>
@@ -676,11 +681,43 @@
 
                         </table>
                     </div>
-
+                    <div class="mt-3 d-flex justify-content-center"><button id="btn_approval" class="login-button">Approval</button></div>
                 </div>
 
             </div>
 
+            <!--          admin Reservation Details dashboard-->
+            <div id="details_dashboard" style="height: 100%;">
+                <div style="height: 20%">
+                    <h1 class="d-flex justify-content-center " style="align-items: center;">Reservation Details</h1>
+                </div>
+                <div style="height: 78%">
+                    <div class="col1" style="height:80%; overflow-x: scroll">
+                        <table class="table table-hover" style="width: 120%">
+                            <thead class="bg-secondary">
+                            <tr>
+                                <th>Booking Id</th>
+                                <th>Customer Name</th>
+                                <th>Customer NIC</th>
+                                <th>Customer Contact</th>
+                                <th>Pickup Date</th>
+                                <th>Pickup Time</th>
+                                <th>Return Date</th>
+                                <th>Return Time</th>
+                                <th>Driver Name</th>
+                                <th>Driver Contact</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody id=detailsTable"></tbody>
+
+
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
             <!--          admin Payment dashboard-->
             <div id="payment_dashboard" style="height: 100%;">
                 <div style="height: 20%">
@@ -691,7 +728,6 @@
                         <table class="table table-hover">
                             <thead class="bg-secondary">
                             <tr>
-                                <!--                        <th>Schedule Id</th>-->
                                 <th>Reserve Id</th>
                                 <th>Car Id</th>
                                 <th>Driver Id</th>
@@ -761,7 +797,6 @@
                 <table class="table table-hover">
                     <thead class="bg-secondary">
                     <tr>
-                        <!--                        <th>Schedule Id</th>-->
                         <th>Reserve Id</th>
                         <th>Car Id</th>
                         <th>Driver Id</th>
@@ -785,7 +820,7 @@
 </section>
 
 
-<!--customer dashboard-->
+<!--BOOKING dashboard-->
 <section class="container-fluid" id="customer_screen" style="height: 130vh;">
     <div class="d-flex flex-column" style="height: 100%; width: 100%;">
         <div style="height: 20%">
@@ -820,7 +855,6 @@
                             <div class="d-flex flex-column">
                                 <label class="form-label" for="bCar">Select Car:</label>
                                 <select class="form-select" id="bCar" name="bCar">
-                                    <option>select car</option>
                                 </select>
                             </div>
                             <div class="d-flex flex-column">
@@ -1050,6 +1084,7 @@
 <script src="controller/DriverController.js"></script>
 <script src="controller/CarController.js"></script>
 <script src="controller/BookingController.js"></script>
+<script src="controller/ReserveController.js"></script>
 
 </body>
 </html>

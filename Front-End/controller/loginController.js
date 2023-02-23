@@ -4,6 +4,11 @@ $("#userName").keyup(function (event) {
         $("#password").focus();
     }
 });
+$("#password").keyup(function (event) {
+    if (event.key == "Enter") {
+        $("#log-dash-board-customer").focus();
+    }
+});
 $("#log-dash-board-customer").click(function () {
     let userName = $("#userName").val();
     let password = $("#password").val();
@@ -23,6 +28,7 @@ $("#log-dash-board-customer").click(function () {
                 loginCustomer();
                 loginCustomerDetails(cName,cContact,cNic);
                 carNameLoad();
+                clearBookingDashboard();
             },
             error: function (error) {
                 var jsObject = JSON.parse(error.responseText);

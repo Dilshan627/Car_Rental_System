@@ -2,9 +2,6 @@ function rollDice() {
     return "B-" + (Math.floor(Math.random() * 100000) + 5);
 }
 
-var bid = rollDice();
-
-$("#bId").val(bid);
 
 function loginCustomerDetails(cName, cContact, cNic) {
     $("#cName").val(cName);
@@ -41,6 +38,7 @@ function carDetails(carName) {
 
 
 function carNameLoad() {
+    $("#bCar").innerHTML = "";
     if ($("#cName").val() == "") {
     } else {
         $.ajax({
@@ -48,10 +46,8 @@ function carNameLoad() {
             dataType: "json",
             success: function (resp) {
                 for (let c of resp.data) {
-                    $("#bCar").clear;
                     $("#bCar").append(`<option value="${c.carBrand}">${c.carBrand}</option>`);
                 }
-
             }
         });
     }
@@ -67,7 +63,94 @@ function bookingActive() {
 }
 
 $("#btnBooking").click(function () {
-    alert("booking")
+    let driver = $("#bDriver").val();
+
+    if ($("#bAvailable").val() == "") {
+        alert('select car')
+    } else {
+        if ($("#bCarNumber").val() == "" || $("#bPickupTime").val() == "" || $("#bReturnDate").val() == "" || $("#bReturnTime").val() == "") {
+            alert("All Fields Are Required !");
+        } else {
+            if (driver == "Yes") {
+                assignDriver();
+                clearBookingDashboard();
+            } else {
+                booking("NO", "NO");
+                clearBookingDashboard();
+            }
+        }
+    }
 });
 
+function assignDriver() {
+    $.ajax({
+        url: baseURL + "driver/available",
+        dataType: "json",
+        success: function (resp) {
+            const randomIndex = Math.floor(Math.random() * resp.data.length);
+            let driverName = resp.data[randomIndex].driverName;
+            let driverContact = resp.data[randomIndex].driverContact;
+            booking(driverName, driverContact);
+        }
+    });
+}
 
+function booking(driverName, driverContact) {
+    let id = $("#bId").val();
+    let name = $("#cName").val();
+    let contact = $("#cContact").val();
+    let nic = $("#cNic").val();
+    let carNumber = $("#bCarNumber").val();
+    let pickupDate = $("#bPickupDate").val();
+    let pickupTime = $("#bPickupTime").val();
+    let returnDate = $("#bReturnDate").val();
+    let returnTime = $("#bReturnTime").val();
+    const reserve = {
+        bookingId: id,
+        customerName: name,
+        customerContact: contact,
+        customerNic: nic,
+        carNumber: carNumber,
+        pickupDate: pickupDate,
+        pickupTime: pickupTime,
+        returnDate: returnDate,
+        returnTime: returnTime,
+        driverName: driverName,
+        driverContact: driverContact
+    }
+    $.ajax({
+        url: baseURL + 'reserve',
+        method: 'post',
+        contentType: "application/json",
+        data: JSON.stringify(reserve),
+        success: function (res) {
+            alert(res.message);
+        },
+        error: function (error) {
+            var jsObject = JSON.parse(error.responseText);
+            alert(jsObject.message);
+        }
+    });
+
+}
+
+function clearBookingDashboard() {
+    var bid = rollDice();
+    $("#bId").val(bid);
+    $("#bCarNumber").val("");
+    $("#bCarType").val("");
+    $("#bCarColor").val("");
+    $("#bPassengers").val("");
+    $("#bTransmissionType").val("");
+    $("#bFuelType").val("");
+    $("#bDailyRate").val("");
+    $("#bMonthlyRate").val("");
+    $("#bExtraKM").val("");
+    $("#bAvailable").val("");
+    $("#bPickupDate").val("");
+    $("#bPickupTime").val("");
+    $("#bReturnDate").val("");
+    $("#bReturnTime").val("");
+
+    $("#selectCarFrontView").attr("src", "assets/4-slide.png");
+}
