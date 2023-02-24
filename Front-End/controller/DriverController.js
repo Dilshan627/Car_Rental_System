@@ -111,9 +111,8 @@ function loadAlllDriver() {
                 var row = '<tr><td>' + dri.id + '</td><td>' + dri.driverName + '</td><td>' + dri.driverAddress + '</td><td>' + dri.driverAge + '</td><td>' + dri.driverContact + '</td></tr>';
                 $("#driverTable").append(row);
             }
-
-            driverFormClear();
             bindRowClickEvents();
+            driverFormClear();
         }
     });
 
@@ -133,7 +132,7 @@ function bindRowClickEvents() {
         $('#driverAge').val(age);
         $('#driverContact').val(contact);
 
-        clickId(id);
+        //clickId(id);
 
         $("#driverName").prop("disabled", true);
         $("#driverAge").prop("disabled", true);

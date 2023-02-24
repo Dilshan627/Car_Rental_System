@@ -38,7 +38,9 @@ function carDetails(carName) {
 
 
 function carNameLoad() {
-    $("#bCar").innerHTML = "";
+    var select = document.getElementById("bCar");
+    select.innerHTML = "";
+
     if ($("#cName").val() == "") {
     } else {
         $.ajax({

@@ -13,30 +13,30 @@ $("#log-dash-board-customer").click(function () {
     let userName = $("#userName").val();
     let password = $("#password").val();
 
-    if (userName == "" || password == "") {
-        alert("All Fields Are Required !");
-    } else {
+     if (userName == "" || password == "") {
+         alert("All Fields Are Required !");
+     } else {
 
-        $.ajax({
-            url: baseURL + "customer/" + userName + "/" + password,
-            dataType: "json",
-            success: function (resp) {
-                let cName = resp.data.customerUserName;
-                let cContact = resp.data.customerContact;
-                let cNic = resp.data.customerNicNo;
-                let id = resp.data.id;
-                loginCustomer();
-                loginCustomerDetails(cName,cContact,cNic);
-                carNameLoad();
-                clearBookingDashboard();
-            },
-            error: function (error) {
-                var jsObject = JSON.parse(error.responseText);
-                alert(jsObject.message);
-            }
-        });
+         $.ajax({
+             url: baseURL + "customer/" + userName + "/" + password,
+             dataType: "json",
+             success: function (resp) {
+                 let cName = resp.data.customerUserName;
+                 let cContact = resp.data.customerContact;
+                 let cNic = resp.data.customerNicNo;
+                 let id = resp.data.id;
+                 loginCustomer();
+                 loginCustomerDetails(cName,cContact,cNic);
+                 carNameLoad();
+                 clearBookingDashboard();
+             },
+             error: function (error) {
+                 var jsObject = JSON.parse(error.responseText);
+                 alert(jsObject.message);
+             }
+         });
 
-    }
+     }
 });
 
 
