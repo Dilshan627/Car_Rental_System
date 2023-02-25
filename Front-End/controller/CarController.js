@@ -226,9 +226,37 @@ function loadAllCar() {
                 $("#carTable").append(row);
 
             }
+            carDelete();
         }
     });
 }
+
+
+function carDelete() {
+    $("#carTable>tr").click(function () {
+        let id = $(this).children(":eq(0)").text();
+        f(id);
+    });
+}
+
+function f(id) {
+    $("#btnCarDelete").click(function () {
+        $.ajax({
+            url: baseURL + "car?id=" + id,
+            method: "delete",
+            dataType: "json",
+            success: function (resp) {
+                alert(resp.message);
+                loadAllCar();
+            },
+            error: function (error) {
+                alert(JSON.parse(error.responseText).message);
+            }
+        });
+
+    });
+}
+
 
 function carRegisterFormClear() {
     $('#carRegistrationNO').val("");
