@@ -10,13 +10,34 @@ function loadReserve() {
                     + re.returnTime + '</td><td>' + re.driverName + '</td><td>' + re.driverContact + '</td><td>' + "pending" + '</td></tr>';
                 $("#reservationsTable").append(row);
             }
-
-
+            approvalBooking();
         }
     });
 }
 
 
-$("#btn_approval").click(function () {
+function approvalBooking() {
+    $("#reservationsTable>tr").click(function () {
+        let id = $(this).children(":eq(0)").text();
+        bookingId(id);
+    });
+}
 
-});
+function bookingId(id) {
+    $("#btn_approval").click(function () {
+        console.log(id)
+        $.ajax({
+            url: baseURL + "reserve/approval/" + id,
+            method: "put",
+            dataType: "json",
+            success: function (resp) {
+                alert(resp.message);
+                loadAllCar();
+            },
+            error: function (error) {
+                alert(JSON.parse(error.responseText).message);
+            }
+        });
+
+    });
+}

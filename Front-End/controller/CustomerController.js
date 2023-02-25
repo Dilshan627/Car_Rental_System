@@ -103,9 +103,6 @@ $("#rCustomerLicenseNumber").keyup(function (event) {
 
 ////////////////////////////////////////////////
 
-
-/*let baseURL = "http://localhost:8080/Back_End_war/";
-// http://localhost:8080/Back_End_war/*/
 $("#btnSaveCustomer").click(function () {
 
     if ($("#rCustomerName").val() == "" || $("#rCustomerPassword").val() == "" || $("#rCustomerNumber").val() == "" || $("#rCustomerAddress").val() == "" ||

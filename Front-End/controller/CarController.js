@@ -167,6 +167,14 @@ function carSave() {
     let carSideView = $('#carSideView')[0].files[0].name;
     let carInteriorView = $('#carInteriorView')[0].files[0].name;
 
+
+  /*  var data = new FormData();
+    let file = $("#file")[0].files[0];
+    let fileName = $("#file")[0].files[0].name;
+    data.append("myFile", file, fileName,carInteriorView);
+    */
+
+
     var car = {
         registrationNO: registrationNO,
         carBrand: carBrand,

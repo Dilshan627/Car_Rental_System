@@ -75,10 +75,10 @@ $("#btnBooking").click(function () {
         } else {
             if (driver == "Yes") {
                 assignDriver();
-                clearBookingDashboard();
+                // clearBookingDashboard();
             } else {
                 booking("NO", "NO");
-                clearBookingDashboard();
+                // clearBookingDashboard();
             }
         }
     }
@@ -107,7 +107,8 @@ function booking(driverName, driverContact) {
     let pickupTime = $("#bPickupTime").val();
     let returnDate = $("#bReturnDate").val();
     let returnTime = $("#bReturnTime").val();
-    const reserve = {
+
+    let reserve = {
         bookingId: id,
         customerName: name,
         customerContact: contact,
@@ -134,6 +135,24 @@ function booking(driverName, driverContact) {
         }
     });
 
+
+   // carAvalability(carNumber);
+}
+
+
+function carAvalability(id) {
+    $.ajax({
+        url: baseURL + "car/booking/" + id,
+        method: "put",
+        dataType: "json",
+        success: function (resp) {
+            alert(resp.message);
+            loadAllCar();
+        },
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
 }
 
 function clearBookingDashboard() {
