@@ -25,7 +25,6 @@ function approvalBooking() {
 
 function bookingId(id) {
     $("#btn_approval").click(function () {
-        console.log(id)
         $.ajax({
             url: baseURL + "reserve/approval/" + id,
             method: "put",

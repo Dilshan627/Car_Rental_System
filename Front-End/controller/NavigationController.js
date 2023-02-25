@@ -95,6 +95,8 @@ $("#btn_details").click(function () {
     $("#reservation_dashboard").css('display', 'none');
     $("#payment_dashboard").css('display', 'none');
     $("#income_dashboard").css('display', 'none');
+
+    loadReserveDetails();
 });
 $("#btn_payment").click(function () {
     $("#payment_dashboard").css('display', 'block');
