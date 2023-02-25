@@ -47,4 +47,10 @@ public class CarController {
     public ResponseUtil getCar(@PathVariable("brand") String brand) {
         return new ResponseUtil("200", "Successfully", carService.getCar(brand));
     }
+
+    @PutMapping(path = "/booking/{id}")
+    public ResponseUtil bookCar(@PathVariable("id") String id) {
+        carService.BookCar(id);
+        return new ResponseUtil("200", "Successfully Updated.", null);
+    }
 }

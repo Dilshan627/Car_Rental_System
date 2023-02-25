@@ -21,10 +21,16 @@ public class ReserveController {
         return new ResponseUtil("200", "Successfully Registered.", null);
     }
 
-    
+
     @GetMapping("/pending")
     public ResponseUtil pendingReserve() {
         return new ResponseUtil("200", "Ok", reserveService.getAllReserves());
+    }
+
+    @PutMapping("/approval/{id}")
+    public ResponseUtil approvalReserve(@PathVariable String id) {
+        reserveService.approvalReserve(id);
+        return new ResponseUtil("200", "Successfully Registered.", null);
     }
 
 }

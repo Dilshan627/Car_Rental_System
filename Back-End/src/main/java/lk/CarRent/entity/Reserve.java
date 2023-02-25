@@ -8,8 +8,7 @@ import lombok.ToString;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.sql.Date;
-import java.sql.Time;
+import java.util.Date;
 
 
 @Data
@@ -24,10 +23,10 @@ public class Reserve {
     private String customerContact;
     private String customerNic;
     private String carNumber;
-    private Date pickupDate;
-    private Time pickupTime;
-    private Date returnDate;
-    private Time returnTime;
+    private String pickupDate;
+    private String pickupTime;
+    private String returnDate;
+    private String returnTime;
     private String driverName;
     private String driverContact;
     @Column(name = "status", columnDefinition = "BIT default 0")

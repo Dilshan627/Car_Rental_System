@@ -16,4 +16,7 @@ public interface CarService {
     List<CarDTO> getAllCar();
 
     CarDTO getCar(String brand);
+
+    void BookCar(String id);
+
 }

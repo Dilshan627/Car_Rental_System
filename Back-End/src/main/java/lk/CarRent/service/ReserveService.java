@@ -12,4 +12,6 @@ public interface ReserveService {
     ReserveDTO searchReserve(String id);
 
     List<ReserveDTO> getAllReserves();
+
+    void approvalReserve(String id);
 }

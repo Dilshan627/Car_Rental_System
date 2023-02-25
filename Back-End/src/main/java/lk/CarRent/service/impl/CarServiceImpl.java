@@ -74,5 +74,14 @@ public class CarServiceImpl implements CarService {
         return mapper.map(car, CarDTO.class);
     }
 
+    @Override
+    public void BookCar(String id) {
+        if (carRepo.existsById(id)) {
+            carRepo.bookCar(id);
+        } else {
+            throw new RuntimeException(id + " " + "No Such Car..! Please Check The Correct Id..!");
+        }
+    }
+
 
 }

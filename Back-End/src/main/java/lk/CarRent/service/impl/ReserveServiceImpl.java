@@ -46,4 +46,13 @@ public class ReserveServiceImpl implements ReserveService {
         return mapper.map(all, new TypeToken<List<ReserveDTO>>() {
         }.getType());
     }
+
+    @Override
+    public void approvalReserve(String id) {
+        if (!reserveRepo.existsById(id)) {
+            reserveRepo.appruvalReserve(id);
+        } else {
+            throw new RuntimeException("Already Exists..!");
+        }
+    }
 }
