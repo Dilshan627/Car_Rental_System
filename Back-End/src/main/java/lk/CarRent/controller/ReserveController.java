@@ -1,5 +1,6 @@
 package lk.CarRent.controller;
 
+import lk.CarRent.dto.CustomerDTO;
 import lk.CarRent.dto.ReserveDTO;
 import lk.CarRent.service.ReserveService;
 import lk.CarRent.util.ResponseUtil;
@@ -27,10 +28,27 @@ public class ReserveController {
         return new ResponseUtil("200", "Ok", reserveService.getAllReserves());
     }
 
-    @PutMapping("/approval/{id}")
-    public ResponseUtil approvalReserve(@PathVariable String id) {
-        reserveService.approvalReserve(id);
+    @GetMapping("/approval")
+    public ResponseUtil approvalReserve() {
+        return new ResponseUtil("200", "Ok", reserveService.getAppruvalReserve()  );
+    }
+
+    @PutMapping("/approval/booking")
+    public ResponseUtil approvalReserve(@RequestBody String id) {
+        System.out.println(id);
+         reserveService.approvalReserve(id);
         return new ResponseUtil("200", "Successfully Registered.", null);
+    }
+
+    @GetMapping(path = "/{id}")
+    public ResponseUtil searchReserve(@PathVariable String id) {
+        return new ResponseUtil("200", "Ok.", reserveService.searchReserve(id));
+    }
+
+    @PutMapping
+    public ResponseUtil updateReserve(@RequestBody ReserveDTO reserve) {
+        reserveService.updateReserve(reserve);
+        return new ResponseUtil("200", "Successfully Updated.", null);
     }
 
 }

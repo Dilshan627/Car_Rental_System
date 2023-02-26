@@ -1,6 +1,7 @@
 package lk.CarRent.service.impl;
 
 import lk.CarRent.dto.ReserveDTO;
+import lk.CarRent.entity.Customer;
 import lk.CarRent.entity.Reserve;
 import lk.CarRent.repo.ReserveRepo;
 import lk.CarRent.service.ReserveService;
@@ -32,12 +33,21 @@ public class ReserveServiceImpl implements ReserveService {
 
     @Override
     public void updateReserve(ReserveDTO reserve) {
-
+        if (reserveRepo.existsById(reserve.getBookingId())) {
+            reserveRepo.save(mapper.map(reserve, Reserve.class));
+        } else {
+            throw new RuntimeException(reserve.getBookingId() + " " + "Already Exists..!");
+        }
     }
 
     @Override
     public ReserveDTO searchReserve(String id) {
-        return null;
+        if (reserveRepo.existsById(id)) {
+            Reserve reserve = reserveRepo.findById(id).get();
+            return mapper.map(reserve, ReserveDTO.class);
+        } else {
+            throw new RuntimeException(id + " Please Check The Id..!");
+        }
     }
 
     @Override
@@ -49,10 +59,18 @@ public class ReserveServiceImpl implements ReserveService {
 
     @Override
     public void approvalReserve(String id) {
+        System.out.println(id);
         if (!reserveRepo.existsById(id)) {
             reserveRepo.appruvalReserve(id);
         } else {
             throw new RuntimeException("Already Exists..!");
         }
+    }
+
+    @Override
+    public List<ReserveDTO> getAppruvalReserve() {
+        List<Reserve> all = reserveRepo.getAppruvalReserve();
+        return mapper.map(all, new TypeToken<List<ReserveDTO>>() {
+        }.getType());
     }
 }

@@ -50,7 +50,8 @@ public class CarController {
 
     @PutMapping(path = "/booking/{id}")
     public ResponseUtil bookCar(@PathVariable("id") String id) {
-        carService.BookCar(id);
+        System.out.println(id);
+      /*  carService.BookCar(id);*/
         return new ResponseUtil("200", "Successfully Updated.", null);
     }
 }
