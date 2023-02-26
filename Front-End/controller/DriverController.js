@@ -121,16 +121,57 @@ function loadAlllDriver() {
 function bindRowClickEvents() {
     $("#driverTable>tr").click(function () {
         let id = $(this).children(":eq(0)").text();
-        let name = $(this).children(":eq(1)").text();
-        let address = $(this).children(":eq(2)").text();
-        let age = $(this).children(":eq(3)").text();
-        let contact = $(this).children(":eq(4)").text();
+        /*  let name = $(this).children(":eq(1)").text();
+          let address = $(this).children(":eq(2)").text();
+          let age = $(this).children(":eq(3)").text();
+          let contact = $(this).children(":eq(4)").text();*/
+        $.ajax({
+            url: baseURL + "driver/" + id,
+            dataType: "json",
+            success: function (resp) {
+                console.log(resp.data);
+                $('#driverName').val(resp.data.driverName);
+                $('#driverAddress').val(resp.data.driverAddress);
+                $('#driverAge').val(resp.data.driverAge);
+                $('#driverContact').val(resp.data.driverContact);
+                $('#driverPassword').val(resp.data.driverPassword);
+            }
+        });
+
+
+        $("#btnUpdateDriver").click(function () {
+            let name = $('#driverName').val();
+            let address = $('#driverAddress').val();
+            let age = $('#driverAge').val();
+            let contact = $('#driverContact').val();
+            let password = $('#driverPassword').val();
+
+            var driver = {
+                id: id,
+                driverName: name,
+                driverAddress: address,
+                driverAge: age,
+                driverContact: contact,
+                driverPassword: password
+            }
+            $.ajax({
+                url: baseURL + 'driver',
+                method: 'put',
+                contentType: "application/json",
+                data: JSON.stringify(driver),
+                success: function (res) {
+                    alert(res.message);
+                    loadAlllDriver();
+                },
+                error: function (error) {
+                    let cause = JSON.parse(error.responseText).message;
+                    alert(cause);
+                }
+            });
+
+        });
 
         //setting table details values to text fields
-        $('#driverName').val(name);
-        $('#driverAddress').val(address);
-        $('#driverAge').val(age);
-        $('#driverContact').val(contact);
 
         //clickId(id);
 
@@ -138,35 +179,6 @@ function bindRowClickEvents() {
         $("#driverAge").prop("disabled", true);
         $("#driverPassword").prop("disabled", true);
         $("#btnSaveDriver").prop("disabled", true);
-
-    });
-}
-
-function clickId(id) {
-
-    $("#btnUpdateDriver").click(function () {
-        let address = $("#driverAddress").val();
-        let number = $("#driverContact").val();
-
-        var driver = {
-            id: id,
-            driverAddress: address,
-            driverContact: number
-        }
-        $.ajax({
-            url: baseURL + 'driver',
-            method: 'put',
-            contentType: "application/json",
-            data: JSON.stringify(driver),
-            success: function (res) {
-                alert(res.message);
-                loadAlllDriver();
-            },
-            error: function (error) {
-                let cause = JSON.parse(error.responseText).message;
-                alert(cause);
-            }
-        });
 
     });
 }

@@ -19,24 +19,51 @@ function loadReserve() {
 function approvalBooking() {
     $("#reservationsTable>tr").click(function () {
         let id = $(this).children(":eq(0)").text();
-        bookingId(id);
+        $("#aId").val(id);
+
     });
 }
 
-function bookingId(id) {
-    $("#btn_approval").click(function () {
-        $.ajax({
-            url: baseURL + "reserve/approval/" + id,
-            method: "put",
-            dataType: "json",
-            success: function (resp) {
-                alert(resp.message);
-                loadAllCar();
-            },
-            error: function (error) {
-                alert(JSON.parse(error.responseText).message);
+$("#btn_approval").click(function () {
+    let id = $("#aId").val();
+    $.ajax({
+        url: baseURL + "reserve/" + id,
+        dataType: "json",
+        success: function (resp) {
+            let reserve = {
+                bookingId: id,
+                customerName: resp.data.customerName,
+                customerContact: resp.data.customerContact,
+                customerNic: resp.data.customerNic,
+                carNumber: resp.data.carNumber,
+                pickupDate: resp.data.pickupDate,
+                pickupTime: resp.data.pickupTime,
+                returnDate: resp.data.returnDate,
+                returnTime: resp.data.returnTime,
+                driverName: resp.data.driverName,
+                driverContact: resp.data.driverContact,
+                status: true
             }
-        });
-
+            approval(reserve);
+        }
     });
+
+});
+
+function approval(reserve) {
+    console.log(reserve);
+    $.ajax({
+        url: baseURL + 'reserve',
+        method: 'put',
+        contentType: "application/json",
+        data: JSON.stringify(reserve),
+        success: function (res) {
+            alert(res.message);
+        },
+        error: function (error) {
+            var jsObject = JSON.parse(error.responseText);
+            alert(jsObject.message);
+        }
+    });
+    loadReserve();
 }
