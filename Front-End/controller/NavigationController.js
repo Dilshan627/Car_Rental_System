@@ -108,6 +108,8 @@ $("#btn_payment").click(function () {
     $("#reservation_dashboard").css('display', 'none');
     $("#details_dashboard").css('display', 'none');
     $("#income_dashboard").css('display', 'none');
+
+    paymentID();
 });
 $("#btn_income").click(function () {
     $("#income_dashboard").css('display', 'block');
