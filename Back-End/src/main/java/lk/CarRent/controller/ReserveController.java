@@ -1,6 +1,5 @@
 package lk.CarRent.controller;
 
-import lk.CarRent.dto.CustomerDTO;
 import lk.CarRent.dto.ReserveDTO;
 import lk.CarRent.service.ReserveService;
 import lk.CarRent.util.ResponseUtil;
@@ -30,13 +29,13 @@ public class ReserveController {
 
     @GetMapping("/approval")
     public ResponseUtil approvalReserve() {
-        return new ResponseUtil("200", "Ok", reserveService.getAppruvalReserve()  );
+        return new ResponseUtil("200", "Ok", reserveService.getAppruvalReserve());
     }
 
     @PutMapping("/approval/booking")
     public ResponseUtil approvalReserve(@RequestBody String id) {
         System.out.println(id);
-         reserveService.approvalReserve(id);
+        reserveService.approvalReserve(id);
         return new ResponseUtil("200", "Successfully Registered.", null);
     }
 
@@ -51,4 +50,8 @@ public class ReserveController {
         return new ResponseUtil("200", "Successfully Updated.", null);
     }
 
+    @GetMapping("/schedule/{name}")
+    public ResponseUtil driverSchedule(@PathVariable String name) {
+        return new ResponseUtil("200", "Ok", reserveService.findByDriverName(name));
+    }
 }

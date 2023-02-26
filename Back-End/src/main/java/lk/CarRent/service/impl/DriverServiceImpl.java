@@ -72,4 +72,10 @@ public class DriverServiceImpl implements DriverService {
         return mapper.map(availableDriver, new TypeToken<List<DriverDTO>>() {
         }.getType());
     }
+
+    @Override
+    public DriverDTO findByDriverNameAndDriverPassword(String username, String password) {
+        Driver driver = driverRepo.findByDriverNameAndDriverPassword(username, password);
+        return mapper.map(driver, DriverDTO.class);
+    }
 }

@@ -48,4 +48,9 @@ public class DriverController {
         return new ResponseUtil("200", "Ok", driverService.getAvailableDriver());
     }
 
+
+    @GetMapping(path ="/{username}/{password}")
+    public ResponseUtil findByPasswordAndName(@PathVariable("username") String username, @PathVariable("password") String password){
+        return new ResponseUtil("200", "Ok", driverService.findByDriverNameAndDriverPassword(username,password));
+    }
 }

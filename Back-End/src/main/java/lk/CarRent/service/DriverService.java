@@ -1,5 +1,6 @@
 package lk.CarRent.service;
 
+import lk.CarRent.dto.CustomerDTO;
 import lk.CarRent.dto.DriverDTO;
 
 import java.util.List;
@@ -16,4 +17,7 @@ public interface DriverService {
     List<DriverDTO> getAllDrivers();
 
     List<DriverDTO>getAvailableDriver();
+
+    DriverDTO findByDriverNameAndDriverPassword(String username, String password);
+
 }

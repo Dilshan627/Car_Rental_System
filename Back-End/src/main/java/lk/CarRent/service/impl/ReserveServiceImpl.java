@@ -73,4 +73,12 @@ public class ReserveServiceImpl implements ReserveService {
         return mapper.map(all, new TypeToken<List<ReserveDTO>>() {
         }.getType());
     }
+
+    @Override
+    public ReserveDTO findByDriverName(String name) {
+        Reserve reserve = reserveRepo.findByDriverName(name);
+            return mapper.map(reserve, ReserveDTO.class);
+    }
+
+
 }
