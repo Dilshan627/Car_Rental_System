@@ -15,5 +15,5 @@ public interface ReserveService {
 
     void approvalReserve(String id);
     List<ReserveDTO>getAppruvalReserve();
-    ReserveDTO findByDriverName(String name);
+    List<ReserveDTO> findByDriverName(String name);
 }

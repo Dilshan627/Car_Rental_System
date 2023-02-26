@@ -17,6 +17,6 @@ public interface ReserveRepo extends JpaRepository<Reserve, String> {
     @Query(value = "UPDATE reserve SET status = true WHERE bookingId =:id", nativeQuery = true)
     void appruvalReserve(@Param("id")String id);
 
-    Reserve findByDriverName(String name);
+    List<Reserve> findByDriverName(String name);
 
 }

@@ -1,7 +1,6 @@
 package lk.CarRent.service.impl;
 
 import lk.CarRent.dto.ReserveDTO;
-import lk.CarRent.entity.Customer;
 import lk.CarRent.entity.Reserve;
 import lk.CarRent.repo.ReserveRepo;
 import lk.CarRent.service.ReserveService;
@@ -75,10 +74,10 @@ public class ReserveServiceImpl implements ReserveService {
     }
 
     @Override
-    public ReserveDTO findByDriverName(String name) {
-        Reserve reserve = reserveRepo.findByDriverName(name);
-            return mapper.map(reserve, ReserveDTO.class);
+    public List<ReserveDTO> findByDriverName(String name) {
+        List<Reserve> all = reserveRepo.findByDriverName(name);
+        return mapper.map(all, new TypeToken<List<ReserveDTO>>() {
+        }.getType());
     }
-
 
 }
