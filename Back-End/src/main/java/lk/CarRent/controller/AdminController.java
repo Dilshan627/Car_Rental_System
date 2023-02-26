@@ -39,4 +39,9 @@ public class AdminController {
         return new ResponseUtil("200", "Successfully Deleted.", null);
     }
 
+    @GetMapping(path ="/{username}/{password}")
+    public ResponseUtil findByPasswordAndName(@PathVariable("username") String username, @PathVariable("password") String password){
+        return new ResponseUtil("200", "Ok", adminService.findByAdminNameAndAdminPassword(username,password));
+    }
+
 }

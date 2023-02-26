@@ -57,4 +57,10 @@ public class AdminServiceImpl implements AdminService {
             throw new RuntimeException(id + " " + "No Such Admin..! Please Check The Id..!");
         }
     }
+
+    @Override
+    public AdminDTO findByAdminNameAndAdminPassword(String username, String password) {
+        Admin admin = adminRepo.findByAdminNameAndAdminPassword(username, password);
+        return mapper.map(admin, AdminDTO.class);
+    }
 }

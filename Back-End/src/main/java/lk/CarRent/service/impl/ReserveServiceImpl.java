@@ -56,15 +56,6 @@ public class ReserveServiceImpl implements ReserveService {
         }.getType());
     }
 
-    @Override
-    public void approvalReserve(String id) {
-        System.out.println(id);
-        if (!reserveRepo.existsById(id)) {
-            reserveRepo.appruvalReserve(id);
-        } else {
-            throw new RuntimeException("Already Exists..!");
-        }
-    }
 
     @Override
     public List<ReserveDTO> getAppruvalReserve() {

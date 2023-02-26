@@ -32,12 +32,6 @@ public class ReserveController {
         return new ResponseUtil("200", "Ok", reserveService.getAppruvalReserve());
     }
 
-    @PutMapping("/approval/booking")
-    public ResponseUtil approvalReserve(@RequestBody String id) {
-        System.out.println(id);
-        reserveService.approvalReserve(id);
-        return new ResponseUtil("200", "Successfully Registered.", null);
-    }
 
     @GetMapping(path = "/{id}")
     public ResponseUtil searchReserve(@PathVariable String id) {
@@ -47,7 +41,7 @@ public class ReserveController {
     @PutMapping
     public ResponseUtil updateReserve(@RequestBody ReserveDTO reserve) {
         reserveService.updateReserve(reserve);
-        return new ResponseUtil("200", "Successfully Updated.", null);
+        return new ResponseUtil("200", "Successfully.", null);
     }
 
     @GetMapping("/schedule/{name}")
