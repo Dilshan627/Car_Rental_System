@@ -92,6 +92,8 @@ function assignDriver() {
             const randomIndex = Math.floor(Math.random() * resp.data.length);
             let driverName = resp.data[randomIndex].driverName;
             let driverContact = resp.data[randomIndex].driverContact;
+
+
             booking(driverName, driverContact);
         }
     });

@@ -683,7 +683,9 @@
                     </div>
                     <input class="form-control" disabled id="aId" name="cName"
                            style="height: 35px; width: 25%; display: none" type="text">
-                    <div class="mt-3 d-flex justify-content-center"><button id="btn_approval" class="login-button">Approval</button></div>
+                    <div class="mt-3 d-flex justify-content-center">
+                        <button class="login-button" id="btn_approval">Approval</button>
+                    </div>
                 </div>
 
             </div>
@@ -799,14 +801,13 @@
                 <table class="table table-hover">
                     <thead class="bg-secondary">
                     <tr>
-                        <th>Reserve Id</th>
-                        <th>Car Id</th>
-                        <th>Driver Id</th>
+                        <th>Booking Id</th>
+                        <th>Customer Name</th>
+                        <th>Customer Contact</th>
                         <th>Pickup Date</th>
                         <th>Pickup Time</th>
                         <th>Return Date</th>
                         <th>Return Time</th>
-                        <th>Status</th>
                     </tr>
                     </thead>
                     <tbody id="driverScheduleTable"></tbody>
@@ -1087,6 +1088,7 @@
 <script src="controller/CarController.js"></script>
 <script src="controller/BookingController.js"></script>
 <script src="controller/ReserveController.js"></script>
+<script src="controller/PaymentController.js"></script>
 
 </body>
 </html>
