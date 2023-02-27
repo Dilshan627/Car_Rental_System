@@ -9,5 +9,5 @@ public interface PaymentService {
     void savePayment(PaymentDTO payment);
 
     List<PaymentDTO> getAllPayment();
-
+    String totalIncome();
 }
