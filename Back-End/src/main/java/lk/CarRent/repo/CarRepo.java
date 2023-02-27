@@ -17,4 +17,7 @@ public interface CarRepo extends JpaRepository<Car, String> {
 
     @Query(value = "SELECT COUNT(*) FROM car", nativeQuery = true)
     String countByCar ();
+
+    @Query(value = "select count(*) from car where maintain='Yes'", nativeQuery = true)
+    String countByMaintainCar ();
 }

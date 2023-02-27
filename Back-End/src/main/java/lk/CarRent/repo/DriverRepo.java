@@ -17,4 +17,7 @@ public interface DriverRepo extends JpaRepository<Driver, Long> {
     void updateDriver(@Param("id,address,contact") String id, String address, String contact);*/
 
     Driver findByDriverNameAndDriverPassword(String name,String password);
+
+    @Query(value =  "select count(*) from driver where status=false", nativeQuery = true)
+    String countByAvailableDriver();
 }

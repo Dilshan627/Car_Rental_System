@@ -20,4 +20,7 @@ public interface DriverService {
 
     DriverDTO findByDriverNameAndDriverPassword(String username, String password);
 
+    String countByAvailableDriver();
+
+
 }

@@ -78,4 +78,9 @@ public class DriverServiceImpl implements DriverService {
         Driver driver = driverRepo.findByDriverNameAndDriverPassword(username, password);
         return mapper.map(driver, DriverDTO.class);
     }
+
+    @Override
+    public String countByAvailableDriver() {
+        return driverRepo.countByAvailableDriver();
+    }
 }

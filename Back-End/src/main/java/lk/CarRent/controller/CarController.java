@@ -59,4 +59,9 @@ public class CarController {
     public ResponseUtil getCarCount() {
         return new ResponseUtil("200", "Ok", carService.countByCar());
     }
+
+    @GetMapping("/count/maintain")
+    public ResponseUtil getMaintainCarCount() {
+        return new ResponseUtil("200", "Ok", carService.countByMaintainCar());
+    }
 }

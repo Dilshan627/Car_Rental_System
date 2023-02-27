@@ -53,4 +53,9 @@ public class DriverController {
     public ResponseUtil findByPasswordAndName(@PathVariable("username") String username, @PathVariable("password") String password){
         return new ResponseUtil("200", "Ok", driverService.findByDriverNameAndDriverPassword(username,password));
     }
+
+    @GetMapping("/count")
+    public ResponseUtil getAvailableDriverCount() {
+        return new ResponseUtil("200", "Ok", driverService.countByAvailableDriver());
+    }
 }
