@@ -1,6 +1,9 @@
 customerCount();
 bookingCount();
 carCount();
+activeBookingCount();
+driverCount();
+maintainCarCount();
 function customerCount() {
     $.ajax({
         url: baseURL + "customer/count",
@@ -51,10 +54,24 @@ function activeBookingCount() {
 
 function driverCount() {
     // availableDriverCount
-
+    $.ajax({
+        url: baseURL + "driver/count",
+        dataType: "json",
+        success: function (resp) {
+            console.log(resp.data)
+            $("#availableDriverCount").text(resp.data)
+        }
+    });
 }
 
 function maintainCarCount() {
     // maintainCarCount
-
+    $.ajax({
+        url: baseURL + "car/count/maintain",
+        dataType: "json",
+        success: function (resp) {
+            console.log(resp.data)
+            $("#maintainCarCount").text(resp.data)
+        }
+    });
 }
