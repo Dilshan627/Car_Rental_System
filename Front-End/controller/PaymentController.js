@@ -17,6 +17,19 @@ $("#harmOrNot").click(function () {
 });
 
 $("#btn_pay").click(function () {
+    if ($("#bookId").val() == "" || $("#paymentDate").val() == "" || $("#paymentDate").val() == "" || $("#rentFee").val() == "" ||
+        $("#lossPayment").val() == "" || $("#eKm").val() == "" || $("#eKmPrice").val() == "" || $("#driverFee").val() == "") {
+        alert("All Fields Are Required !");
+    } else {
+        pay()
+        $("#btn_pay").prop('disabled', true);
+        clear();
+    }
+
+});
+
+
+function pay() {
     let pId = $("#paymentId").val();
     let bId = $("#bookId").val();
     let pDate = $("#paymentDate").val();
@@ -26,7 +39,6 @@ $("#btn_pay").click(function () {
     let eKmPrice = $("#eKmPrice").val();
     let driverPrice = $("#driverFee").val();
     let fullPayment = $("#fullPayment").val();
-
 
     let payment = {
         paymentId: pId,
@@ -47,18 +59,38 @@ $("#btn_pay").click(function () {
         data: JSON.stringify(payment),
         success: function (res) {
             alert(res.message);
+            paymentID();
+            paymentLoad();
         },
         error: function (error) {
             var jsObject = JSON.parse(error.responseText);
             alert(jsObject.message);
         }
     });
+}
 
-    paymentID();
-    paymentLoad();
+$("#btn_pay").prop('disabled', true);
+
+$("#btn_calculate").click(function () {
+    fullPayment();
+    $("#btn_pay").prop('disabled', false);
 });
 
-paymentLoad();
+function fullPayment() {
+    let rentFee = $("#rentFee").val();
+    let lossPayment = $("#lossPayment").val();
+    let eKm = $("#eKm").val();
+    let eKmPrice = $("#eKmPrice").val();
+    let driverPrice = $("#driverFee").val();
+
+    let number = parseInt(eKm) * parseInt(eKmPrice);
+    let newVar = parseInt(rentFee) + parseInt(number) + parseInt(driverPrice);
+    let number1 = parseInt(newVar) - parseInt(lossPayment);
+
+    $("#fullPayment").val(number1 + ".00");
+}
+
+paymentLoad()
 
 function paymentLoad() {
     $("#paymentTable").empty();
@@ -77,4 +109,15 @@ function paymentLoad() {
 
         }
     });
+}
+
+function clear() {
+    $("#bookId").val("");
+    $("#paymentDate").val("");
+    $("#rentFee").val("");
+    $("#lossPayment").val("");
+    $("#eKm").val("");
+    $("#eKmPrice").val("");
+    $("#driverFee").val("");
+    $("#fullPayment").val("");
 }

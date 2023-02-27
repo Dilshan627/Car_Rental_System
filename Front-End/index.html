@@ -759,12 +759,15 @@
                         </div>
                         <div class="d-flex justify-content-evenly" style="height: 10%;">
                             <input class="form-control" id="driverFee" name="driverFee"
-                                   placeholder="Driver Fee" value="1000.00" style="height: 35px; width: 25%" type="text">
-                            <input class="form-control" id="fullPayment" name="cName"
-                                   placeholder="Full payment" style="height: 35px; width: 25%" type="text">
+                                   placeholder="Driver Fee" style="height: 35px; width: 25%" type="text"
+                                   value="1000.00">
+                            <input class="form-control" disabled id="fullPayment" name="cName"
+                                   placeholder="Full payment" style="height: 35px; width: 25%; color: red" type="text">
                         </div>
                         <div class="d-flex justify-content-center" style="height: 5%;background-color: #ffffff">
-                            <button id="btn_pay" type="button" class="btn btn-primary">pay</button>
+                            <button class="btn btn-secondary" id="btn_calculate" type="button">calculate</button>
+
+                            <button class="btn btn-primary" id="btn_pay" type="button">pay</button>
 
                         </div>
 
@@ -789,7 +792,6 @@
                                 <tbody id="paymentTable"></tbody>
 
 
-
                             </table>
                         </div>
 
@@ -804,10 +806,11 @@
                     <h1 class="d-flex justify-content-center " style="align-items: center;">Income</h1>
                 </div>
                 <div style="height: 10%">
-                    <button type="button" class="btn btn-primary">Primary</button>
-                    <button type="button" class="btn btn-secondary">Secondary</button>
-                    <button type="button" class="btn btn-success">Success</button>
-                    <input placeholder="income" disabled>
+                    <button class="btn btn-primary" type="button">Daly Income</button>
+                    <button class="btn btn-secondary" type="button">Weekly Income</button>
+                    <button class="btn btn-success" type="button">Annual Income</button>
+                    <label style="font-size: 22px">Total Income</label>
+                    <input id="lbl_income" disabled placeholder="income">
                 </div>
                 <div style="height: 78%">
                     <div class="col1" style="height:80%; overflow-x: scroll">

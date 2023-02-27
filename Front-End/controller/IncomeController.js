@@ -18,3 +18,5 @@ function incomeLoad() {
         }
     });
 }
+
+// lbl_income
