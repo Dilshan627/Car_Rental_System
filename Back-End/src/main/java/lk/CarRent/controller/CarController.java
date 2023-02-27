@@ -54,4 +54,9 @@ public class CarController {
       /*  carService.BookCar(id);*/
         return new ResponseUtil("200", "Successfully Updated.", null);
     }
+
+    @GetMapping("/count")
+    public ResponseUtil getCarCount() {
+        return new ResponseUtil("200", "Ok", carService.countByCar());
+    }
 }

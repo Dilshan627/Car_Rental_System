@@ -83,5 +83,10 @@ public class CarServiceImpl implements CarService {
         }
     }
 
+    @Override
+    public String countByCar() {
+        return carRepo.countByCar();
+    }
+
 
 }

@@ -48,4 +48,9 @@ public class CustomerController {
         return new ResponseUtil("200", "Ok", customerService.findByCustomerUserNameAndCustomerPassword(username,password));
     }
 
+    @GetMapping("/count")
+    public ResponseUtil getCustomerCount() {
+        return new ResponseUtil("200", "Ok", customerService.countById());
+    }
+
 }

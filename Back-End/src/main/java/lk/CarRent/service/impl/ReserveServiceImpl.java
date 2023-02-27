@@ -71,4 +71,14 @@ public class ReserveServiceImpl implements ReserveService {
         }.getType());
     }
 
+    @Override
+    public String countByReserve() {
+        return reserveRepo.countByReserve();
+    }
+
+    @Override
+    public String countByActiveBooking() {
+        return reserveRepo.countByActiveBooking();
+    }
+
 }

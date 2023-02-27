@@ -72,5 +72,9 @@ public class CustomerServiceImpl implements CustomerService {
         return mapper.map(customer,CustomerDTO.class);
     }
 
+    @Override
+    public String countById() {
+        return customerRepo.countById();
+    }
 
 }

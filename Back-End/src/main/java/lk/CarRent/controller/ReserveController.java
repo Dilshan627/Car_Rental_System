@@ -48,4 +48,13 @@ public class ReserveController {
     public ResponseUtil driverSchedule(@PathVariable String name) {
         return new ResponseUtil("200", "Ok", reserveService.findByDriverName(name));
     }
+
+    @GetMapping("/count")
+    public ResponseUtil getReserveCount() {
+        return new ResponseUtil("200", "Ok", reserveService.countByReserve());
+    }
+    @GetMapping("/active")
+    public ResponseUtil getActiveCount() {
+        return new ResponseUtil("200", "Ok", reserveService.countByActiveBooking());
+    }
 }

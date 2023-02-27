@@ -13,4 +13,8 @@ public interface CarRepo extends JpaRepository<Car, String> {
 
     @Query(value = "UPDATE car SET status = 'Not Available' WHERE registrationNO =:id", nativeQuery = true)
     void bookCar(@Param("id") String id);
+
+
+    @Query(value = "SELECT COUNT(*) FROM car", nativeQuery = true)
+    String countByCar ();
 }

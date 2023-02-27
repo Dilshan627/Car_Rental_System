@@ -15,4 +15,9 @@ public interface ReserveService {
 
     List<ReserveDTO>getAppruvalReserve();
     List<ReserveDTO> findByDriverName(String name);
+
+    String countByReserve();
+
+    String countByActiveBooking();
+
 }

@@ -17,4 +17,6 @@ public interface CustomerService {
 
     CustomerDTO findByCustomerUserNameAndCustomerPassword(String username, String password);
 
+
+    String countById();
 }

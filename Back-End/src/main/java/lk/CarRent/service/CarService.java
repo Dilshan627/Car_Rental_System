@@ -19,4 +19,5 @@ public interface CarService {
 
     void BookCar(String id);
 
+    String countByCar ();
 }
