@@ -51,6 +51,32 @@ function loginCustomer() {
 }
 
 $("#log-dash-board-admin").click(function () {
+    let userName = $("#userName").val();
+    let password = $("#password").val();
+
+    if (userName == "" || password == "") {
+        alert("All Fields Are Required !");
+    } else {
+
+        $.ajax({
+            url: baseURL + "admin/" + userName + "/" + password,
+            dataType: "json",
+            success: function (resp) {
+                console.log(resp.data);
+                loginAdmin();
+            },
+            error: function (error) {
+                var jsObject = JSON.parse(error.responseText);
+                alert(jsObject.message);
+            }
+        });
+
+    }
+
+});
+
+
+function loginAdmin() {
     $("#admin_screen").css('display', 'block');
 
     $('#loading_page').css('display', 'none');
@@ -58,8 +84,7 @@ $("#log-dash-board-admin").click(function () {
     $("#login_screen").css('display', 'none');
     $("#driver_screen").css('display', 'none');
     $("#customer_screen").css('display', 'none');
-
-});
+}
 
 $("#log-dash-board-driver").click(function () {
     let userName = $("#userName").val();
