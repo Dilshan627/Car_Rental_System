@@ -340,17 +340,17 @@
                         <div class="d-flex justify-content-between" style="height: 50%;">
                             <div class="d-flex flex-column justify-content-center"
                                  style="height: 50%;width: 20%;border-style: solid;border-color: #000000;align-items: center">
-                                <div><h1>25</h1></div>
+                                <div><h1 id="registerUser">25</h1></div>
                                 <div><h4>Registered users</h4></div>
                             </div>
                             <div class="d-flex flex-column justify-content-center"
                                  style="height: 50%;width: 20%;border-style: solid;border-color: #000000;align-items: center">
-                                <div><h1>25</h1></div>
+                                <div><h1 id="bookings">25</h1></div>
                                 <div><h4>bookings</h4></div>
                             </div>
                             <div class="d-flex flex-column justify-content-center"
                                  style="height: 50%;width: 20%;border-style: solid;border-color: #000000;align-items: center">
-                                <div><h1>25</h1></div>
+                                <div><h1 id="availableCarCount">25</h1></div>
                                 <div><h4>available cars</h4></div>
                             </div>
 
@@ -358,17 +358,17 @@
                         <div class="d-flex justify-content-between" style="height: 50%;align-items: center">
                             <div class="d-flex flex-column justify-content-center"
                                  style="height: 50%;width: 20%;border-style: solid;border-color: #000000;align-items: center">
-                                <div><h1>25</h1></div>
+                                <div><h1 id="bookingCount">25</h1></div>
                                 <div><h4>active bookings</h4></div>
                             </div>
                             <div class="d-flex flex-column justify-content-center"
                                  style="height: 50%;width: 20%;border-style: solid;border-color: #000000;align-items: center">
-                                <div><h1>25</h1></div>
+                                <div><h1 id="availableDriverCount">25</h1></div>
                                 <div><h4>available drivers</h4></div>
                             </div>
                             <div class="d-flex flex-column justify-content-center"
                                  style="height: 50%;width: 20%;border-style: solid;border-color: #000000;align-items: center">
-                                <div><h1>25</h1></div>
+                                <div><h1 id="maintainCarCount">25</h1></div>
                                 <div><h4>maintenance cars</h4></div>
                             </div>
                         </div>
@@ -704,13 +704,13 @@
                                 <th>Customer Name</th>
                                 <th>Customer NIC</th>
                                 <th>Customer Contact</th>
+                                <th>Car Number</th>
                                 <th>Pickup Date</th>
                                 <th>Pickup Time</th>
                                 <th>Return Date</th>
                                 <th>Return Time</th>
                                 <th>Driver Name</th>
                                 <th>Driver Contact</th>
-                                <th>Status</th>
                             </tr>
                             </thead>
                             <tbody id="detailsTable"></tbody>
@@ -1139,6 +1139,7 @@
 <script src="controller/BookingController.js"></script>
 <script src="controller/ReserveController.js"></script>
 <script src="controller/PaymentController.js"></script>
+<script src="controller/DashBoardController.js"></script>
 
 </body>
 </html>
