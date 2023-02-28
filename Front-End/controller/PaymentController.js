@@ -95,7 +95,7 @@ function fullPayment() {
     $("#fullPayment").val(number1 + ".00");
 }
 
-paymentLoad()
+
 
 function paymentLoad() {
     $("#paymentTable").empty();

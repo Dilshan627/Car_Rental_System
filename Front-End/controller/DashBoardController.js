@@ -1,9 +1,4 @@
-customerCount();
-bookingCount();
-carCount();
-activeBookingCount();
-driverCount();
-maintainCarCount();
+
 function customerCount() {
     $.ajax({
         url: baseURL + "customer/count",

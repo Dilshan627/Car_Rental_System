@@ -38,6 +38,13 @@ $("#btn_dashboard").click(function () {
     $("#details_dashboard").css('display', 'none');
     $("#payment_dashboard").css('display', 'none');
     $("#income_dashboard").css('display', 'none');
+
+    customerCount();
+    bookingCount();
+    carCount();
+    activeBookingCount();
+    driverCount();
+    maintainCarCount();
 });
 $("#btn_car").click(function () {
     $("#car_dashboard").css('display', 'block');
@@ -110,6 +117,7 @@ $("#btn_payment").click(function () {
     $("#income_dashboard").css('display', 'none');
 
     paymentID();
+    paymentLoad();
 });
 $("#btn_income").click(function () {
     $("#income_dashboard").css('display', 'block');
@@ -123,6 +131,7 @@ $("#btn_income").click(function () {
     $("#payment_dashboard").css('display', 'none');
 
     incomeLoad();
+    totalIncome();
 });
 
 

@@ -1,4 +1,3 @@
-incomeLoad();
 
 function incomeLoad() {
     $("#incomeTable").empty();
@@ -13,10 +12,17 @@ function incomeLoad() {
                 $("#incomeTable").append(row);
 
             }
-            paymentID();
-
         }
     });
 }
 
 // lbl_income
+function totalIncome() {
+    $.ajax({
+        url: baseURL + "payment/income",
+        dataType: "json",
+        success: function (resp) {
+            $("#lbl_income").val(resp.data);
+        }
+    });
+}
