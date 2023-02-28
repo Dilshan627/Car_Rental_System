@@ -37,6 +37,7 @@ $("#log-dash-board-customer").click(function () {
         });
 
     }
+
 });
 
 

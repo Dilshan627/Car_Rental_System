@@ -72,8 +72,13 @@ function pay() {
 $("#btn_pay").prop('disabled', true);
 
 $("#btn_calculate").click(function () {
-    fullPayment();
-    $("#btn_pay").prop('disabled', false);
+    if ($("#bookId").val() == "" || $("#paymentDate").val() == "" || $("#paymentDate").val() == "" || $("#rentFee").val() == "" ||
+        $("#lossPayment").val() == "" || $("#eKm").val() == "" || $("#eKmPrice").val() == "" || $("#driverFee").val() == "") {
+        alert("All Fields Are Required !");
+    } else {
+        fullPayment();
+        $("#btn_pay").prop('disabled', false);
+    }
 });
 
 function fullPayment() {

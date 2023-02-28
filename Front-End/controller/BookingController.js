@@ -138,7 +138,7 @@ function booking(driverName, driverContact) {
     });
 
 
-   // carAvalability(carNumber);
+    // carAvalability(carNumber);
 }
 
 
