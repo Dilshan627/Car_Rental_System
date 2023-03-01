@@ -29,6 +29,12 @@ $("#log-dash-board-customer").click(function () {
                 loginCustomerDetails(cName, cContact, cNic);
                 carNameLoad();
                 clearBookingDashboard();
+                customerCount();
+                bookingCount();
+                carCount();
+                activeBookingCount();
+                driverCount();
+                maintainCarCount();
             },
             error: function (error) {
                 var jsObject = JSON.parse(error.responseText);
