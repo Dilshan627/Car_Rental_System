@@ -38,7 +38,8 @@ $("#log-dash-board-customer").click(function () {
             },
             error: function (error) {
                 var jsObject = JSON.parse(error.responseText);
-                alert(jsObject.message);
+                console.log(jsObject)
+                alert("invalid username or password");
             }
         });
 
@@ -61,24 +62,24 @@ $("#log-dash-board-admin").click(function () {
     let userName = $("#userName").val();
     let password = $("#password").val();
 
-  /*  if (userName == "" || password == "") {
-        alert("All Fields Are Required !");
-    } else {
+    /*  if (userName == "" || password == "") {
+          alert("All Fields Are Required !");
+      } else {
 
-        $.ajax({
-            url: baseURL + "admin/" + userName + "/" + password,
-            dataType: "json",
-            success: function (resp) {
-                console.log(resp.data);
-                loginAdmin();
-            },
-            error: function (error) {
-                var jsObject = JSON.parse(error.responseText);
-                alert(jsObject.message);
-            }
-        });
+          $.ajax({
+              url: baseURL + "admin/" + userName + "/" + password,
+              dataType: "json",
+              success: function (resp) {
+                  console.log(resp.data);
+                  loginAdmin();
+              },
+              error: function (error) {
+                  console.log(jsObject)
+                  alert("invalid username or password");
+              }
+          });
 
-    }*/
+      }*/
     loginAdmin();
 
 });
@@ -118,8 +119,8 @@ $("#log-dash-board-driver").click(function () {
                 driverSchedule(resp.data.driverName);
             },
             error: function (error) {
-                var jsObject = JSON.parse(error.responseText);
-                alert(jsObject.message);
+                console.log(jsObject)
+                alert("invalid username or password");
             }
         });
 

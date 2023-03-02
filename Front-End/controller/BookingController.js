@@ -78,13 +78,13 @@ $("#btnBooking").click(function () {
              alert("All Fields Are Required !");
          } else {
              if (driver == "Yes") {
-                /* assignDriver();
+                 assignDriver();
                  uploadSlip();
-                 clearBookingDashboard();*/
+                 clearBookingDashboard();
              } else {
-               /*  booking("NO", "NO");
+                 booking("NO", "NO");
                  uploadSlip();
-                 clearBookingDashboard();*/
+                 clearBookingDashboard();
              }
          }
      }
@@ -224,6 +224,8 @@ function clearBookingDashboard() {
     $("#bPickupTime").val("");
     $("#bReturnDate").val("");
     $("#bReturnTime").val("");
+    $("#paymentSlip").val("");
+    $("#LDPayment").val("");
 
     $("#selectCarFrontView").attr("src", "assets/images.png");
 }
