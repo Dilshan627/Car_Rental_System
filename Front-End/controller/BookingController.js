@@ -157,6 +157,9 @@ function carAvalability(id) {
     });
 }
 
+// LDPayment
+
+
 function clearBookingDashboard() {
     var bid = rollDice();
     $("#bId").val(bid);

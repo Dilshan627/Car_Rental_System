@@ -13,7 +13,7 @@ $("#log-dash-board-customer").click(function () {
     let userName = $("#userName").val();
     let password = $("#password").val();
 
-    if (userName == "" || password == "") {
+/*    if (userName == "" || password == "") {
         alert("All Fields Are Required !");
     } else {
 
@@ -42,7 +42,8 @@ $("#log-dash-board-customer").click(function () {
             }
         });
 
-    }
+    }*/
+    loginCustomer();
 
 });
 
