@@ -30,7 +30,7 @@ function carDetails(carName) {
             $("#bMonthlyRate").val(resp.data.monthlyRate)
             $("#bExtraKM").val(resp.data.extraKM)
             $("#bAvailable").val(resp.data.status)
-            $("#selectCarFrontView").attr("src", "assets/" + resp.data.carFrontView);
+            $("#selectCarFrontView").attr("src", baseURL + "uploads/" + resp.data.carFrontView);
             bookingActive();
         }
     });
@@ -67,21 +67,24 @@ function bookingActive() {
 $("#btnBooking").click(function () {
     let driver = $("#bDriver").val();
 
-    if ($("#bAvailable").val() == "") {
-        alert('select car')
-    } else {
-        if ($("#bCarNumber").val() == "" || $("#bPickupTime").val() == "" || $("#bReturnDate").val() == "" || $("#bReturnTime").val() == "") {
-            alert("All Fields Are Required !");
-        } else {
-            if (driver == "Yes") {
-                assignDriver();
-                // clearBookingDashboard();
-            } else {
-                booking("NO", "NO");
-                // clearBookingDashboard();
-            }
-        }
-    }
+    /* if ($("#bAvailable").val() == "") {
+         alert('select car')
+     } else {
+         if ($("#bCarNumber").val() == "" || $("#bPickupTime").val() == "" || $("#bReturnDate").val() == "" || $("#bReturnTime").val() == "") {
+             alert("All Fields Are Required !");
+         } else {
+             if (driver == "Yes") {
+                 assignDriver();
+                 // clearBookingDashboard();
+             } else {
+                 booking("NO", "NO");
+                 // clearBookingDashboard();
+             }
+         }
+     }*/
+
+    calculatePayment();
+    uploadSlip();
 });
 
 function assignDriver() {
@@ -158,6 +161,30 @@ function carAvalability(id) {
 }
 
 // LDPayment
+function calculatePayment() {
+
+}
+
+function uploadSlip() {
+    var data = new FormData();
+    let file = $("#paymentSlip")[0].files[0];
+    let fileName = $("#paymentSlip")[0].files[0].name;
+    data.append("myFile", file, fileName);
+
+    $.ajax({
+        url: baseURL + "api/v1/upload",
+        method: 'post',
+        async: true,
+        contentType: false,
+        processData: false,
+        data: data,
+        success: function (resp) {
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
 
 
 function clearBookingDashboard() {

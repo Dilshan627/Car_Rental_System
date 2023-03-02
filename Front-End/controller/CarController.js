@@ -168,12 +168,24 @@ function carSave() {
     let carInteriorView = $('#carInteriorView')[0].files[0].name;
 
 
-  /*  var data = new FormData();
-    let file = $("#file")[0].files[0];
-    let fileName = $("#file")[0].files[0].name;
-    data.append("myFile", file, fileName,carInteriorView);
-    */
+    var data = new FormData();
+    let file = $("#carInteriorView")[0].files[0];
+    let fileName = $("#carInteriorView")[0].files[0].name;
+    data.append("myFile", file, fileName);
 
+    $.ajax({
+        url: baseURL + "api/v1/upload",
+        method: 'post',
+        async: true,
+        contentType: false,
+        processData: false,
+        data: data,
+        success: function (resp) {
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
 
     var car = {
         registrationNO: registrationNO,
@@ -196,9 +208,6 @@ function carSave() {
         carSideView: carSideView,
         carInteriorView: carInteriorView
     }
-
-
-    console.log(car);
 
     $.ajax({
         url: baseURL + 'car',

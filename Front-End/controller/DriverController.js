@@ -121,10 +121,7 @@ function loadAlllDriver() {
 function bindRowClickEvents() {
     $("#driverTable>tr").click(function () {
         let id = $(this).children(":eq(0)").text();
-        /*  let name = $(this).children(":eq(1)").text();
-          let address = $(this).children(":eq(2)").text();
-          let age = $(this).children(":eq(3)").text();
-          let contact = $(this).children(":eq(4)").text();*/
+
         $.ajax({
             url: baseURL + "driver/" + id,
             dataType: "json",
@@ -171,7 +168,6 @@ function bindRowClickEvents() {
 
         });
 
-        //setting table details values to text fields
 
         //clickId(id);
 
@@ -183,12 +179,10 @@ function bindRowClickEvents() {
     });
 }
 
-
 $("#btnClearDriver").click(function () {
     driverFormClear();
 
 });
-
 
 function driverFormClear() {
     $('#driverName').val("");
