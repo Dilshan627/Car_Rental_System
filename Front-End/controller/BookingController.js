@@ -13,6 +13,8 @@ $("#bCar").click(function () {
     let carName = $("#bCar").val();
 
     carDetails(carName);
+    calculatePayment();
+
 });
 
 function carDetails(carName) {
@@ -67,24 +69,26 @@ function bookingActive() {
 $("#btnBooking").click(function () {
     let driver = $("#bDriver").val();
 
-    /* if ($("#bAvailable").val() == "") {
+     if ($("#bAvailable").val() == "") {
          alert('select car')
      } else {
-         if ($("#bCarNumber").val() == "" || $("#bPickupTime").val() == "" || $("#bReturnDate").val() == "" || $("#bReturnTime").val() == "") {
+         if ($("#bCarNumber").val() == "" || $("#bPickupTime").val() == "" || $("#bReturnDate").val() == "" || $("#bReturnTime").val() == "" ||
+             $("#paymentSlip").val() == ""
+         ) {
              alert("All Fields Are Required !");
          } else {
              if (driver == "Yes") {
-                 assignDriver();
-                 // clearBookingDashboard();
+                /* assignDriver();
+                 uploadSlip();
+                 clearBookingDashboard();*/
              } else {
-                 booking("NO", "NO");
-                 // clearBookingDashboard();
+               /*  booking("NO", "NO");
+                 uploadSlip();
+                 clearBookingDashboard();*/
              }
          }
-     }*/
+     }
 
-    calculatePayment();
-    uploadSlip();
 });
 
 function assignDriver() {
@@ -112,6 +116,7 @@ function booking(driverName, driverContact) {
     let pickupTime = $("#bPickupTime").val();
     let returnDate = $("#bReturnDate").val();
     let returnTime = $("#bReturnTime").val();
+    let payment = $("#LDPayment").val();
 
     let reserve = {
         bookingId: id,
@@ -124,7 +129,8 @@ function booking(driverName, driverContact) {
         returnDate: returnDate,
         returnTime: returnTime,
         driverName: driverName,
-        driverContact: driverContact
+        driverContact: driverContact,
+        payment:payment
     }
     $.ajax({
         url: baseURL + 'reserve',
@@ -162,7 +168,21 @@ function carAvalability(id) {
 
 // LDPayment
 function calculatePayment() {
+    let Type = $("#bCarType").val();
 
+    switch(Type) {
+        case 'General':
+            $("#LDPayment").val("10000");
+            break;
+        case 'Premium':
+            $("#LDPayment").val("15000");
+            break;
+        case 'Luxury':
+            $("#LDPayment").val("20000");
+            break;
+        default:
+        // code block for default case
+    }
 }
 
 function uploadSlip() {
@@ -205,5 +225,5 @@ function clearBookingDashboard() {
     $("#bReturnDate").val("");
     $("#bReturnTime").val("");
 
-    $("#selectCarFrontView").attr("src", "assets/4-slide.png");
+    $("#selectCarFrontView").attr("src", "assets/images.png");
 }

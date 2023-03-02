@@ -92,6 +92,13 @@ function loginAdmin() {
     $("#login_screen").css('display', 'none');
     $("#driver_screen").css('display', 'none');
     $("#customer_screen").css('display', 'none');
+
+    customerCount();
+    bookingCount();
+    carCount();
+    activeBookingCount();
+    driverCount();
+    maintainCarCount();
 }
 
 $("#log-dash-board-driver").click(function () {

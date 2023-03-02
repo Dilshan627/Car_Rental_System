@@ -197,3 +197,24 @@ function driverFormClear() {
     $("#driverPassword").prop("disabled", false);
 
 }
+
+
+const searchInputDriver = document.getElementById('searchInputDriver');
+const dTable = document.getElementById('driverTable');
+
+searchInputDriver.addEventListener('input', () => {
+    const searchValue = searchInputDriver.value.toLowerCase();
+    const rows = dTable.querySelectorAll('tbody tr');
+
+    rows.forEach(row => {
+        const name = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+        const contact = row.querySelector('td:nth-child(5)').textContent.toLowerCase();
+
+        if (name.includes(searchValue) || contact.includes(searchValue)) {
+            row.classList.remove('hidden');
+        } else {
+            row.classList.add('hidden');
+        }
+    });
+});
+
