@@ -18,7 +18,7 @@ public class CarController {
     public ResponseUtil saveCar(@RequestBody CarDTO car) {
         System.out.println(car);
         carService.saveCar(car);
-        return new ResponseUtil("200", "Successfully Registered.", null);
+        return new ResponseUtil("200", "Successfully Add.", null);
     }
 
     @GetMapping(path = "/{id}")

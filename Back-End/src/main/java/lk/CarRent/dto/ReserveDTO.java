@@ -22,5 +22,6 @@ public class ReserveDTO {
     private String returnTime;
     private String driverName;
     private String driverContact;
+    private String payment;
     private boolean status;
 }

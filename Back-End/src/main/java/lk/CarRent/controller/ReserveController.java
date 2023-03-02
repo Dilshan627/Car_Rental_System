@@ -18,7 +18,7 @@ public class ReserveController {
     public ResponseUtil saveReserve(@RequestBody ReserveDTO reserve) {
         System.out.println(reserve);
         reserveService.saveReserve(reserve);
-        return new ResponseUtil("200", "Successfully Registered.", null);
+        return new ResponseUtil("200", "Successfully Booking.", null);
     }
 
 
