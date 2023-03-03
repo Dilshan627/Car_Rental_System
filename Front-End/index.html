@@ -764,8 +764,9 @@
                         <div class="d-flex justify-content-evenly" style="height: 10%;">
                             <input class="form-control" disabled id="paymentId" name="paymentId"
                                    placeholder="Payment Id" style="height: 35px; width: 25%" type="text">
-                            <input class="form-control" id="bookId" name="bookId"
-                                   placeholder="Booking Id" style="height: 35px; width: 25%" type="text">
+                            <select class="form-select" id="bookId" name="fuelType" style="height: 35px; width: 25%">
+
+                            </select>
                         </div>
                         <div class="d-flex justify-content-evenly" style="height: 10%;">
                             <input class="form-control" id="paymentDate" name="paymentDate"
@@ -817,7 +818,6 @@
                                     <th>Extra Price</th>
                                     <th>Driver Fee</th>
                                     <th>Full payment</th>
-                                    <th>payment Date</th>
                                 </tr>
                                 </thead>
                                 <tbody id="paymentTable"></tbody>
@@ -850,7 +850,6 @@
                             <tr>
                                 <th>Payment Id</th>
                                 <th>Reserve Id</th>
-                                <th>Payment Date</th>
                                 <th>Rent Fee</th>
                                 <th>Driver Fee</th>
                                 <th>Damage Fee</th>

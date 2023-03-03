@@ -118,6 +118,7 @@ $("#btn_payment").click(function () {
 
     paymentID();
     paymentLoad();
+    idLoad();
 });
 $("#btn_income").click(function () {
     $("#income_dashboard").css('display', 'block');

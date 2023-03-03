@@ -21,13 +21,41 @@ $("#btn_pay").click(function () {
         $("#lossPayment").val() == "" || $("#eKm").val() == "" || $("#eKmPrice").val() == "" || $("#driverFee").val() == "") {
         alert("All Fields Are Required !");
     } else {
-        pay()
+        pay();
+        reservationUpdate();
         $("#btn_pay").prop('disabled', true);
         clear();
     }
-
 });
 
+function reservationUpdate() {
+
+    let id = $("#bookId").val();
+    $.ajax({
+        url: baseURL + "reserve/" + id,
+        dataType: "json",
+        success: function (resp) {
+            let reserve = {
+                bookingId: id,
+                customerName: resp.data.customerName,
+                customerContact: resp.data.customerContact,
+                customerNic: resp.data.customerNic,
+                carNumber: resp.data.carNumber,
+                pickupDate: resp.data.pickupDate,
+                pickupTime: resp.data.pickupTime,
+                returnDate: resp.data.returnDate,
+                returnTime: resp.data.returnTime,
+                driverName: resp.data.driverName,
+                driverContact: resp.data.driverContact,
+                payment: resp.data.payment,
+                status: true,
+                fullPayment: true
+            }
+            approval(reserve);
+        }
+    });
+
+}
 
 function pay() {
     let pId = $("#paymentId").val();
@@ -96,7 +124,6 @@ function fullPayment() {
 }
 
 
-
 function paymentLoad() {
     $("#paymentTable").empty();
 
@@ -106,14 +133,53 @@ function paymentLoad() {
         success: function (resp) {
             for (let pay of resp.data) {
                 var row = '<tr><td>' + pay.paymentId + '</td><td>' + pay.bookingId + '</td><td>' + pay.rentFee + '</td><td>' + pay.lossPayment
-                    + '</td><td>' + pay.extraKm + '</td><td>' + pay.extraKmPrice + '</td><td>' + pay.driverFee + '</td><td>' + pay.fullPayment + '</td><td>' + pay.paymentDate + '</td></tr>';
+                    + '</td><td>' + pay.extraKm + '</td><td>' + pay.extraKmPrice + '</td><td>' + pay.driverFee + '</td><td>' + pay.fullPayment + '</td></tr>';
                 $("#paymentTable").append(row);
 
             }
             paymentID();
-
         }
     });
+}
+
+// bookId
+function idLoad() {
+    var select = document.getElementById("bookId");
+    select.innerHTML = "";
+    $.ajax({
+        url: baseURL + "reserve/paymentId",
+        dataType: "json",
+        success: function (resp) {
+            for (let r of resp.data) {
+                $("#bookId").append(`<option value="${r.bookingId}">${r.bookingId}</option>`);
+            }
+        }
+    });
+}
+
+
+$("#bookId").click(function () {
+    let id = $("#bookId").val();
+    $.ajax({
+        url: baseURL + "reserve/" + id,
+        dataType: "json",
+        success: function (resp) {
+            feeSet(resp.data.carNumber);
+        }
+    });
+
+});
+
+function feeSet(id) {
+    $.ajax({
+        url: baseURL + "car/" + id,
+        dataType: "json",
+        success: function (resp) {
+            $("#rentFee").val(resp.data.dailyRate)
+            $("#eKmPrice").val(resp.data.extraKM)
+        }
+    });
+
 }
 
 function clear() {

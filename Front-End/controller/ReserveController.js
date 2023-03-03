@@ -42,7 +42,9 @@ $("#btn_approval").click(function () {
                 returnTime: resp.data.returnTime,
                 driverName: resp.data.driverName,
                 driverContact: resp.data.driverContact,
-                status: true
+                payment:resp.data.payment,
+                status: true,
+                fullPayment:false
             }
             approval(reserve);
         }
@@ -58,7 +60,7 @@ function approval(reserve) {
         contentType: "application/json",
         data: JSON.stringify(reserve),
         success: function (res) {
-            alert(res.message);
+            console.log(res.message);
         },
         error: function (error) {
             var jsObject = JSON.parse(error.responseText);
