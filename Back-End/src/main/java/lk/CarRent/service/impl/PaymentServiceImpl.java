@@ -38,7 +38,18 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public String totalIncome() {
-        return paymentRepo.totalIncome();
+    public String dailyIncome() {
+        return paymentRepo.dailyIncome();
     }
+
+    @Override
+    public String weeklyIncome() {
+        return paymentRepo.weeklyIncome();
+    }
+
+    @Override
+    public String annualIncome() {
+        return paymentRepo.annualIncome();
+    }
+
 }

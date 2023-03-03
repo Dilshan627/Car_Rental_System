@@ -15,7 +15,6 @@ public interface ReserveRepo extends JpaRepository<Reserve, String> {
 
     List<Reserve> findByDriverName(String name);
 
-
     @Query(value = " select count(*) from reserve where status=false", nativeQuery = true)
     String countByReserve ();
 
