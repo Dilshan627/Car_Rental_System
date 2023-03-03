@@ -20,5 +20,5 @@ public class PaymentDTO {
     private double extraKmPrice;
     private double driverFee;
     private double fullPayment;
-    private String paymentDate;
+    private Date paymentDate;
 }

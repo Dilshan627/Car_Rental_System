@@ -24,4 +24,6 @@ public class ReserveDTO {
     private String driverContact;
     private String payment;
     private boolean status;
+    private boolean fullPayment;
+
 }
