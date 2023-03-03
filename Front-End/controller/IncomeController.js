@@ -18,10 +18,38 @@ function incomeLoad() {
 // lbl_income
 function totalIncome() {
     $.ajax({
-        url: baseURL + "payment/income",
+        url: baseURL + "payment/daily",
         dataType: "json",
         success: function (resp) {
             $("#lbl_income").val(resp.data);
         }
     });
 }
+
+$("#btn_day").click(function () {
+    $.ajax({
+        url: baseURL + "payment/daily",
+        dataType: "json",
+        success: function (resp) {
+            $("#lbl_income").val(resp.data);
+        }
+    });
+});
+$("#btn_week").click(function () {
+    $.ajax({
+        url: baseURL + "payment/weekly",
+        dataType: "json",
+        success: function (resp) {
+            $("#lbl_income").val(resp.data);
+        }
+    });
+});
+$("#btn_annual").click(function () {
+    $.ajax({
+        url: baseURL + "payment/annual",
+        dataType: "json",
+        success: function (resp) {
+            $("#lbl_income").val(resp.data);
+        }
+    });
+});
