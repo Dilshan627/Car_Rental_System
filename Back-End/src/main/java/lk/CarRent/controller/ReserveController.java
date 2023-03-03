@@ -57,4 +57,9 @@ public class ReserveController {
     public ResponseUtil getActiveCount() {
         return new ResponseUtil("200", "Ok", reserveService.countByActiveBooking());
     }
+
+    @GetMapping("/paymentId")
+    public ResponseUtil getPaymentId() {
+        return new ResponseUtil("200", "Ok", reserveService.getPaymentId());
+    }
 }

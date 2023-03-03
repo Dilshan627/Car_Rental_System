@@ -1,6 +1,7 @@
 package lk.CarRent.service;
 
 import lk.CarRent.dto.ReserveDTO;
+import lk.CarRent.entity.Reserve;
 
 import java.util.List;
 
@@ -19,5 +20,7 @@ public interface ReserveService {
     String countByReserve();
 
     String countByActiveBooking();
+
+    List<ReserveDTO> getPaymentId();
 
 }

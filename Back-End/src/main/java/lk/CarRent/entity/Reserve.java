@@ -31,7 +31,6 @@ public class Reserve {
     private String payment;
     @Column(name = "status", columnDefinition = "BIT default 0")
     private boolean status;
-
     @Column(name = "fullPayment", columnDefinition = "BIT default 0")
     private boolean fullPayment;
 

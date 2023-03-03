@@ -21,4 +21,7 @@ public interface ReserveRepo extends JpaRepository<Reserve, String> {
 
     @Query(value = " select count(*) from reserve where status=true", nativeQuery = true)
     String countByActiveBooking ();
+
+    @Query(value = "SELECT * FROM reserve WHERE status=true AND fullpayment=false", nativeQuery = true)
+    List<Reserve> getPaymentId();
 }

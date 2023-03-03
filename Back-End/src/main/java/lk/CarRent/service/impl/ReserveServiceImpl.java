@@ -81,4 +81,11 @@ public class ReserveServiceImpl implements ReserveService {
         return reserveRepo.countByActiveBooking();
     }
 
+    @Override
+    public List<ReserveDTO> getPaymentId() {
+        List<Reserve> all = reserveRepo.getPaymentId();
+        return mapper.map(all, new TypeToken<List<ReserveDTO>>() {
+        }.getType());
+    }
+
 }
