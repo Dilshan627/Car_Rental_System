@@ -37,6 +37,11 @@ public class PaymentController {
         return new ResponseUtil("200", "Ok", paymentService.weeklyIncome());
     }
 
+    @GetMapping("/monthly")
+    public ResponseUtil getAllMonthlyIncome() {
+        return new ResponseUtil("200", "Ok", paymentService.monthlyIncome());
+    }
+
     @GetMapping("/annual")
     public ResponseUtil getAllAnnualIncome() {
         return new ResponseUtil("200", "Ok", paymentService.annualIncome());

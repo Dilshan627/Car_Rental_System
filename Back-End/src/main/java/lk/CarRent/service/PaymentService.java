@@ -9,7 +9,10 @@ public interface PaymentService {
     void savePayment(PaymentDTO payment);
 
     List<PaymentDTO> getAllPayment();
-    String dailyIncome();
-    String weeklyIncome();
-    String annualIncome();
+    List<PaymentDTO> dailyIncome();
+    List<PaymentDTO> weeklyIncome();
+    List<PaymentDTO> monthlyIncome();
+    List<PaymentDTO> annualIncome();
+
+
 }

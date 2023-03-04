@@ -38,18 +38,32 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public String dailyIncome() {
-        return paymentRepo.dailyIncome();
+    public List<PaymentDTO> dailyIncome() {
+        List<Payment> all = paymentRepo.dailyIncome();
+        return mapper.map(all, new TypeToken<List<PaymentDTO>>() {
+        }.getType());
     }
 
     @Override
-    public String weeklyIncome() {
-        return paymentRepo.weeklyIncome();
+    public List<PaymentDTO> weeklyIncome() {
+        List<Payment> all = paymentRepo.weeklyIncome();
+        return mapper.map(all, new TypeToken<List<PaymentDTO>>() {
+        }.getType());
     }
 
     @Override
-    public String annualIncome() {
-        return paymentRepo.annualIncome();
+    public List<PaymentDTO> monthlyIncome() {
+        List<Payment> all = paymentRepo.monthlyIncome();
+        return mapper.map(all, new TypeToken<List<PaymentDTO>>() {
+        }.getType());
     }
+
+    @Override
+    public List<PaymentDTO> annualIncome() {
+        List<Payment> all = paymentRepo.annualIncome();
+        return mapper.map(all, new TypeToken<List<PaymentDTO>>() {
+        }.getType());
+    }
+
 
 }
