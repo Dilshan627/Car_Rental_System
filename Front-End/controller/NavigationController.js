@@ -132,7 +132,7 @@ $("#btn_income").click(function () {
     $("#payment_dashboard").css('display', 'none');
 
     incomeLoad();
-    totalIncome();
+
 });
 
 
